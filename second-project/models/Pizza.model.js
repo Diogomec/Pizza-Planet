@@ -13,7 +13,7 @@ const userSchema = new Schema(
     size: {
       type: String,
       default: "medium"
-    }
+    },
     price: Number,
   },
   {

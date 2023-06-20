@@ -23,7 +23,7 @@ router.post('/signup', (req, res, next) => {
       });
     })
     .then(userFromDB => {
-        res.redirect('/profile');
+        res.redirect('/users/profile');
     })
     .catch(error => next(error));
 });

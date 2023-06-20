@@ -8,4 +8,9 @@
 {{!-- <label for="cellphone">Cellphone: </label>
 <input type="number" name="cellphone" id="cellphone"> --}}
 <button type="submit">Signup</button>
+
+
+ {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
 </form>

@@ -24,6 +24,12 @@ const projectName = "second-project";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
+// Importing the Models
+const User = require('./models/User.model');
+const Pizza = require('./models/Pizza.model');
+const Order = require('./models/Order.model');
+const Review = require('./models/Review.model');
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);

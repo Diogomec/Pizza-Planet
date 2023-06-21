@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const userSchema = new Schema(
+const pizzaSchema = new Schema(
   {
     name: {
       type: String,
@@ -16,12 +16,11 @@ const userSchema = new Schema(
     },
     price: Number,
   },
-  {
-    // this second object adds extra properties: `createdAt` and `updatedAt`    
+  {   
     timestamps: true
   }
 );
 
-const User = model("User", userSchema);
+const Pizza = model("Pizza", pizzaSchema);
 
-module.exports = User;
+module.exports = Pizza;

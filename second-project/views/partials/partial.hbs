@@ -1,0 +1,17 @@
+<nav>
+    <ul>
+        <li>
+            <a href="/">Home</a>
+            <a href="/auth/signup">Signup</a>
+            <a href="/auth/login">Login</a>
+            {{#if showProfile}}
+            <a href="/users/profile">Profile</a>
+            {{/if}}
+            {{#if showLogout}}
+            <form action="/auth/logout" method="post">
+             <button>Logout</button>
+            </form>
+            {{/if}}
+        </li>
+    </ul>
+</nav>

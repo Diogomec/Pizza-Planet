@@ -17,6 +17,10 @@ const app = express();
 
 require('./config/session.config')(app);
 
+// Register the partials directory
+const path = require('path');
+hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 

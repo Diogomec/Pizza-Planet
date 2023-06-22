@@ -1,0 +1,13 @@
+<h1>Choose your Pizzas here!</h1>
+
+<ul>
+  {{#each pizzas}}
+  <li>
+    <h3>{{name}}</h3>
+    <p>Sauce: {{sauce}}</p>
+    <p>Ingredients: {{ingredients}}</p>
+    <p>Size: {{size}}</p>
+    <p>Price: {{price}}</p>
+  </li>
+  {{/each}}
+</ul>

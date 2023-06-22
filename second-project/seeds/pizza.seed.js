@@ -4,64 +4,64 @@ const allPizzas = [
   {
     name: "Margherita",
     sauce: "Tomato sauce",
-    ingredients: ["Mozzarella cheese", "Fresh basil"],
-    size: "Medium",
+    ingredients: [" Mozzarella cheese", " Fresh basil"],
+    size: "Sun - (Medium)",
     price: 10.99
   },
   {
     name: "Pepperoni",
     sauce: "Tomato sauce",
-    ingredients: ["Mozzarella cheese", "Pepperoni slices"],
-    size: "Large",
+    ingredients: [" Mozzarella cheese", " Pepperoni slices"],
+    size: "Sun - (Medium)",
     price: 10.99
   },
   {
     name: "Hawaiian",
     sauce: "Tomato sauce",
-    ingredients: ["Mozzarella cheese", "Ham", "Pineapple"],
-    size: "Medium",
+    ingredients: [" Mozzarella cheese", " Ham", " Pineapple"],
+    size: "Sun - (Medium)",
     price: 11.99
   },
   {
     name: "Mozzarella",
     sauce: "Tomato sauce",
-    ingredients: ["Mozzarella cheese"],
-    size: "Large",
+    ingredients: [" Mozzarella cheese"],
+    size: "Sun - (Medium)",
     price: 9.99
   },
   {
     name: "Napolitan",
     sauce: "Tomato sauce",
-    ingredients: ["Mozzarella cheese", "Pepperoni", "Sausage", "Bell peppers", "Onions", "Olives"],
-    size: "Large",
+    ingredients: [" Mozzarella cheese", " Pepperoni", " Sausage", " Bell peppers", " Onions", " Olives"],
+    size: "Sun - (Medium)",
     price: 12.99
   },
   {
     name: "Moon Cheese",
     sauce: "Tomato sauce",
-    ingredients: ["Mozzarella cheese", "Cheddar cheese", "Parmesan cheese", "Gorgonzola cheese"],
-    size: "Medium",
+    ingredients: [" Mozzarella cheese", " Cheddar cheese", " Parmesan cheese", " Gorgonzola cheese"],
+    size: "Sun - (Medium)",
     price: 11.99
   },
   {
     name: "Romeo and Juliette",
     sauce: "Nutella",
-    ingredients: ["Sliced strawberries", "Bananas", "Whipped cream"],
-    size: "Small",
+    ingredients: [" Sliced strawberries", " Bananas", " Whipped cream"],
+    size: "Sun - (Medium)",
     price: 6.99
   },
   {
     name: "Veggie Supreme",
     sauce: "Tomato sauce",
-    ingredients: ["Vegan cheese", "Bell peppers", "Onions", "Mushrooms", "Olives"],
-    size: "Medium",
+    ingredients: [" Vegan cheese", " Bell peppers", " Onions", " Mushrooms", " Olives"],
+    size: "Sun - (Medium)",
     price: 10.99
   },
   {
     name: "Cheesy Bites",
     sauce: "Tomato sauce",
-    ingredients: ["Mozzarella cheese", "Mini sausages", "Smiley face-shaped pepperoni"],
-    size: "Small",
+    ingredients: [" Mozzarella cheese", " Mini sausages", " Smiley face-shaped pepperoni"],
+    size: "Sun - (Medium)",
     price: 4.99
   }
 ];

@@ -1,0 +1,25 @@
+
+   {{> public }}
+   
+   {{#if userInSession}}
+  <p>This is your profile page my friend!</p>
+  <button>
+    <a href="/admin/profile">My Data</a>
+  </button>
+  <button>
+    <a href="/admin/profile">Create an User</a>
+  </button>
+  <button>
+    <a href="/admin/create-a-pizza">Create a Pizza</a>
+  </button>
+  <button>
+    <a href="/admin/profile">Update a Pizza</a>
+  </button>
+  <button>
+    <a href="/admin/profile">Delete a Pizza</a>
+  </button>
+{{else}}
+  <br>
+  <p>Still no logged in user, sorry!</p>
+{{/if}}
+

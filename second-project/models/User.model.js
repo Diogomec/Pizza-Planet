@@ -18,10 +18,18 @@ const userSchema = new Schema(
     passwordHash: {
       type: String,
       required: true
+    },
+    role: {
+        type: String,
+        enum: ['User', 'Admin'],
+        default: 'User'
+    },
+    userUrl: {
+      type: String,
+      default: 'images/default-user.png'
     }
   },
-  {
-    // this second object adds extra properties: `createdAt` and `updatedAt`    
+  {    
     timestamps: true
   }
 );

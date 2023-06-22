@@ -11,7 +11,7 @@ router.get("/signup", isLoggedOut, (req, res, next) => {
 
 router.post('/signup', (req, res, next) => {
 
-    const { username, email, password } = req.body;
+    const { username, email, password, role } = req.body;
  
   bcryptjs
     .genSalt(saltRounds)
@@ -19,8 +19,9 @@ router.post('/signup', (req, res, next) => {
     .then(hashedPassword => {
       return User.create({
         username,
+        passwordHash: hashedPassword,
         email,
-        passwordHash: hashedPassword
+        role
       });
     })
     .then(userFromDB => {
@@ -45,19 +46,26 @@ router.post('/login', (req, res, next) => {
     }
    
     User.findOne({ email })
-      .then(user => {
-        if (!user) {
-          res.render('auth/login', { errorMessage: 'Email is not registered. Try with other email.' });
-          return;
-        } else if (bcryptjs.compareSync(password, user.passwordHash)) {
-          req.session.currentUser = user;
-          res.redirect('/users/profile');
+    .then(user => {
+      console.log(user)
+      if (!user) {
+        res.render('auth/login', { errorMessage: 'Email is not registered. Try with other email.' });
+        return;
+      } else if (bcryptjs.compareSync(password, user.passwordHash)) {
+          if(user.role === 'User'){
+            req.session.currentUser = user;
+            res.redirect('/users/profile');
         } else {
-          res.render('auth/login', { errorMessage: 'Incorrect password.' });
+          req.session.currentUser = user;
+          res.redirect('/');
         }
-      })
-      .catch(error => next(error));
-  });
+    
+      } else {
+        res.render('auth/login', { errorMessage: 'Incorrect password.' });
+      }
+    })
+    .catch(error => next(error));
+});
 
   router.post("/logout", (req, res) => {
     req.session.destroy();

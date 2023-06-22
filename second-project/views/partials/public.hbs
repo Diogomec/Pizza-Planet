@@ -1,0 +1,27 @@
+{{#if userInSession}}
+<nav>
+    <ul>
+        <li>
+            <a href="/">Home</a>
+            <a href="/users/profile">Profile</a>
+            <form action="/auth/logout" method="post">
+             <button>Logout</button>
+            </form>
+            
+        </li>
+    </ul>
+</nav>
+
+{{else}}
+<nav>
+    <ul>
+        <li>
+            <a href="/">Home</a>
+            <a href="/auth/signup">Signup</a>
+            <a href="/auth/login">Login</a>
+            <a href="/users/profile">Profile</a>
+            
+        </li>
+    </ul>
+</nav>
+{{/if}}

@@ -26,9 +26,9 @@ require("./config")(app);
 
 // default value for title local
 const capitalize = require("./utils/capitalize");
-const projectName = "second-project";
+const projectName = "Pizza Planet";
 
-app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
+app.locals.appTitle = `${capitalize(projectName)}`;
 
 // Importing the Models
 const User = require('./models/User.model');

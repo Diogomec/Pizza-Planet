@@ -12,7 +12,8 @@ const pizzaSchema = new Schema(
     ingredients: [String],
     size: {
       type: String,
-      default: "medium"
+      enum: ["Asteroid - (Small)", "Sun - (Medium)", "Galaxy - (Large)"],
+      default: "Sun - (Medium)"
     },
     price: Number,
   },

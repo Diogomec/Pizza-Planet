@@ -1,19 +1,9 @@
 
-   {{> public }}
+{{> public }}
    
-   {{#if userInSession}}
-  <p>This is your profile page my friend!</p>
-  <button>
-    <a href="/users/profile">My Data</a>
-  </button>
-  <button>
-    <a href="/users/profile">My Orders</a>
-  </button>
-  <button>
-    <a href="/users/profile">My Favourites</a>
-  </button>
-  <button>
-    <a href="/users/profile">Create My Pizza</a>
+{{#if userInSession}}
+  <h2>Welcome {{userInSession.username}}</h2>
+ 
   </button>
 {{else}}
   <br>

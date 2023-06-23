@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
-const User = require('../models/User.model');
 const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
+const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
+const User = require('../models/User.model');
+
 
 router.get("/signup", isLoggedOut, (req, res, next) => {
   res.render("auth/signup");
@@ -11,7 +12,7 @@ router.get("/signup", isLoggedOut, (req, res, next) => {
 
 router.post('/signup', (req, res, next) => {
 
-    const { username, email, password, role } = req.body;
+    const { username, email, password } = req.body;
  
   bcryptjs
     .genSalt(saltRounds)
@@ -21,7 +22,6 @@ router.post('/signup', (req, res, next) => {
         username,
         passwordHash: hashedPassword,
         email,
-        role
       });
     })
     .then(userFromDB => {
@@ -35,8 +35,9 @@ router.get("/login", isLoggedOut, (req, res, next) => {
   });
 
 router.post('/login', (req, res, next) => {
+
     const { email, password } = req.body;
-    console.log('SESSION =====> ', req.session);
+    // console.log('SESSION =====> ', req.session);
    
     if (email === '' || password === '') {
       res.render('auth/login', {
@@ -47,7 +48,6 @@ router.post('/login', (req, res, next) => {
    
     User.findOne({ email })
     .then(user => {
-      console.log(user)
       if (!user) {
         res.render('auth/login', { errorMessage: 'Email is not registered. Try with other email.' });
         return;
@@ -59,7 +59,6 @@ router.post('/login', (req, res, next) => {
           req.session.currentUser = user;
           res.redirect('/admin/profile');
         }
-    
       } else {
         res.render('auth/login', { errorMessage: 'Incorrect password.' });
       }
@@ -67,9 +66,9 @@ router.post('/login', (req, res, next) => {
     .catch(error => next(error));
 });
 
-  router.post("/logout", (req, res) => {
+router.post("/logout", (req, res) => {
     req.session.destroy();
     res.redirect("/");
-  });
+});
 
 module.exports = router;

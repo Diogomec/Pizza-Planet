@@ -1,16 +1,17 @@
-{{> public }}
+   {{> admin }}
 
-<form action="/auth/signup" method="post" class="d-flex flex-column justify-content-center align-items-center">
+<form action="/admin/create-a-user" method="post" class="d-flex flex-column justify-content-center align-items-center">
 <label for="username">Username: </label>
 <input type="text" name="username" id="username" placeholder="Tony">
 <label for="email">Email: </label>
 <input type="email" name="email" id="email" placeholder="tony@pizzaplanet.com">
 <label for="password">Password: </label>
 <input type="password" name="password" id="password" placeholder="******">
-{{!-- <label for="cellphone">Cellphone: </label>
-<input type="number" name="cellphone" id="cellphone"> --}}
+<select name="role" id="role">Role: 
+<option value="User">User</option>
+<option value="Admin">Admin</option>
+</select>
 <button type="submit">Signup</button>
-<p>Already have an account? <a href="/auth/login">Login now!</a></p>
 
 
  {{#if errorMessage}}

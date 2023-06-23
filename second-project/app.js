@@ -41,8 +41,8 @@ const seedAllPizzas = require("./seeds/pizza.seed");
 seedAllPizzas();
 
 // 👇 Start handling routes here
-const indexRoutes = require("./routes/index.routes");
-app.use("/", indexRoutes);
+const mainRoutes = require("./routes/main.routes");
+app.use("/", mainRoutes);
 
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);

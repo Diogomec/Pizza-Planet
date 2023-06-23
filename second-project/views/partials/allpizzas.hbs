@@ -1,13 +1,21 @@
 <h1>Choose your Pizzas here!</h1>
-
-<ul>
-  {{#each pizzas}}
-  <li>
-    <h3>{{name}}</h3>
-    <p>Sauce: {{sauce}}</p>
-    <p>Ingredients: {{ingredients}}</p>
-    <p>Size: {{size}}</p>
-    <p>Price: {{price}}</p>
-  </li>
-  {{/each}}
+ 
 </ul>
+ 
+<div class="row">
+  {{#each pizzas}}
+<div class="w-25 mx-5">
+ <div class="card border border-white " >
+  <img src="/images/pepperoni.jpg" class="card-img-top" alt="..." style="height: 15rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">Description</p>
+  </div>
+    <ul class="list-group list-group-flush border border-white">
+    <li class="list-group-item"><a href="#" class="card-link">See More</a></li>
+    <li class="list-group-item"><a href="#" class="card-link">Order</a></li>
+  </ul>
+ </div>
+ </div>
+  {{/each}}
+</div>

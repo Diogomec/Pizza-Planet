@@ -36,6 +36,10 @@ const Pizza = require('./models/Pizza.model');
 const Order = require('./models/Order.model');
 const Review = require('./models/Review.model');
 
+// All pizzas
+const seedAllPizzas = require("./seeds/pizza.seed");
+seedAllPizzas();
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);

@@ -1,11 +1,12 @@
 {{> public }}
 
+<div class="container">
 <form action="/auth/login" method="post" class="d-flex flex-column justify-content-center align-items-center">
 <label for="email">Email: </label>
 <input type="text" name="email" id="emai" placeholder="Tony">
 <label for="Password">Password: </label>
 <input type="password" name="password" id="password" placeholder="******">
-<button type="submit">Login</button>~
+<button type="submit">Login</button>
 <p>Don't have an account? <a href="/auth/signup">Register here</a></p>
 
 
@@ -13,3 +14,4 @@
       <p>{{errorMessage}}</p>
     {{/if}}
 </form>
+</div>

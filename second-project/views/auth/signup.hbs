@@ -1,5 +1,6 @@
 {{> public }}
 
+<div class="container">
 <form action="/auth/signup" method="post" class="d-flex flex-column justify-content-center align-items-center">
 <label for="username">Username: </label>
 <input type="text" name="username" id="username" placeholder="Tony">
@@ -17,3 +18,4 @@
       <p>{{errorMessage}}</p>
     {{/if}}
 </form>
+</div>

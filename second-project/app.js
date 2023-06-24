@@ -28,7 +28,7 @@ require("./config")(app);
 const capitalize = require("./utils/capitalize");
 const projectName = "Pizza Planet";
 
-app.locals.appTitle = `${capitalize(projectName)}`;
+app.locals.appTitle = projectName;
 
 // Importing the Models
 const User = require('./models/User.model');

@@ -3,6 +3,10 @@
   src: url('../fonts/TurretRoad-Bold.ttf') format('truetype');
 }
 
+h1 {
+  color: white !important;
+}
+
 body {
   background-image: url('../images/bg-universe.jpg');
   min-height: 100vh;
@@ -44,13 +48,7 @@ nav > ul > li > a:hover {
   color: red;
 }
 
-footer {
-  bottom: 0;
-  width: 100%;
-  position: absolute;
-  color: white;
-  text-align: center;
-}
+
 
 p {
   color: white;
@@ -67,6 +65,14 @@ p {
   border-radius: 15px;
 }
 
+footer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+
 #pizza-cursor {
   position: fixed;
   width: 70px;
@@ -76,6 +82,3 @@ p {
   pointer-events: none;
 }
 
-h1 {
-  color: white !important;
-}

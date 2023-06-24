@@ -55,9 +55,13 @@ p {
 
 #pizza-cursor {
   position: fixed;
-  width: 40px;
-  height: 40px;
-  background-image: url('../images/pizza-mouse.png');
+  width: 70px;
+  height: 70px;
+  background-image: url('../images/cursor-pizza.png');
   background-size: cover;
   pointer-events: none;
+}
+
+h1 {
+  color: white;
 }

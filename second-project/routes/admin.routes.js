@@ -42,7 +42,7 @@ router.post("/create-a-user", async (req, res, next) => {
           role
         });
       })
-      .then(userFromDB => {
+      .then(() => {
           res.redirect('/admin/create-a-user', {userInSession: req.session.currentUser});
       })
       .catch(error => next(error));
@@ -50,8 +50,54 @@ router.post("/create-a-user", async (req, res, next) => {
 
 router.get("/menu", async (req, res, next) => {
     const pizzas = await Pizza.find();
-    const userInSession = await req.session.currentUser;
-    res.render("admin/menu", { pizzas, userInSession});
+    const userInSession = req.session.currentUser;
+    const data = {pizzas, userInSession};
+    console.log(data)
+    res.render("admin/menu", { data });
+});
+
+router.get('/menu/:pizzaId', (req, res) => {
+
+ const { pizzaId } = req.params;
+ 
+  Pizza.findById(pizzaId)
+    .then(pizzafound => res.render('admin/details.hbs', { pizza: pizzafound }))
+    .catch(error => {
+      console.log('Error while retrieving pizza details: ', error);
+ 
+      // Call the error-middleware to display the error page to the user
+      next(error);
+    });
+});
+
+router.get('/menu/:pizzaId/edit-a-pizza', (req, res, next) => {
+  const { pizzaId } = req.params;
+ 
+  Pizza.findById(pizzaId)
+    .then(pizzaToEdit => {
+      // console.log(bookToEdit);
+      res.render('admin/edit-a-pizza', { pizza: pizzaToEdit }); // <-- add this line
+    })
+    .catch(error => next(error));
+});
+
+router.post('/menu/:pizzaId/edit-a-pizza', (req, res, next) => {
+
+  const { pizzaId } = req.params;
+ 
+  const { name, sauce, ingredients, size, price } = req.body;
+ 
+  Pizza.findByIdAndUpdate(pizzaId, { name, sauce, ingredients, size, price }, { new: true })
+    .then(updatedPizza => res.redirect(`/admin/menu`)) // go to the details page to see the updates
+    .catch(error => next(error));
+});
+
+router.post('/menu/:pizzaId/delete-a-pizza', (req, res, next) => {
+  const { pizzaId } = req.params;
+ 
+  Pizza.findByIdAndDelete(pizzaId)
+    .then(() => res.redirect('/admin/menu'))
+    .catch(error => next(error));
 });
 
 module.exports = router;

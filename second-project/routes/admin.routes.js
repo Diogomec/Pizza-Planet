@@ -53,7 +53,7 @@ router.get("/menu", async (req, res, next) => {
     const userInSession = req.session.currentUser;
     const data = {pizzas, userInSession};
     console.log(data)
-    res.render("admin/menu", data);
+    res.render("admin/menu", { data });
 });
 
 router.get('/menu/:pizzaId', (req, res) => {

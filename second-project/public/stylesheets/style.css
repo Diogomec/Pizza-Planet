@@ -35,7 +35,7 @@ nav > ul > li > a {
 footer {
   bottom: 0;
   width: 100%;
-  position: relative;
+  position: absolute;
   color: white;
   text-align: center;
 }
@@ -46,12 +46,12 @@ p {
 
 
 
-.container {
+/* .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 800px;
-}
+} */
 
 #pizza-cursor {
   position: fixed;
@@ -63,5 +63,12 @@ p {
 }
 
 h1 {
+  color: white;
+}
+
+button {
+  background-color: transparent;
+  border: white;
+  border-style: solid;
   color: white;
 }

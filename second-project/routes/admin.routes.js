@@ -42,7 +42,7 @@ router.post("/create-a-user", async (req, res, next) => {
           role
         });
       })
-      .then(userFromDB => {
+      .then(() => {
           res.redirect('/admin/create-a-user', {userInSession: req.session.currentUser});
       })
       .catch(error => next(error));
@@ -50,8 +50,24 @@ router.post("/create-a-user", async (req, res, next) => {
 
 router.get("/menu", async (req, res, next) => {
     const pizzas = await Pizza.find();
-    const userInSession = await req.session.currentUser;
-    res.render("admin/menu", { pizzas, userInSession});
+    const userInSession = req.session.currentUser;
+    const data = {pizzas, userInSession};
+    console.log(data)
+    res.render("admin/menu", data);
+});
+
+router.get('/menu/:pizzaId', (req, res) => {
+
+ const { pizzaId } = req.params;
+ 
+  Pizza.findById(pizzaId)
+    .then(pizzafound => res.render('admin/menu/details.hbs', { pizza: pizza }))
+    .catch(error => {
+      console.log('Error while retrieving pizza details: ', error);
+ 
+      // Call the error-middleware to display the error page to the user
+      next(error);
+    });
 });
 
 module.exports = router;

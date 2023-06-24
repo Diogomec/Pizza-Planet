@@ -1,12 +1,10 @@
+/* Do Not Edit */
 @font-face {
   font-family: 'Turret Road';
   src: url('../fonts/TurretRoad-Bold.ttf') format('truetype');
 }
 
-h1 {
-  color: white !important;
-}
-
+/* Do Not Edit */
 body {
   background-image: url('../images/bg-universe.jpg');
   min-height: 100vh;
@@ -14,65 +12,87 @@ body {
   font-family: 'Turret Road', sans-serif !important;
 }
 
+h1 {
+  color: white !important;
+}
 
- h2 {
+h2 {
   color: white;
 }
 
+/* Do Not Edit */
 nav {
   width: 100%;
-  height: 80px;
+  height: 70px;
   background-color: rgba(255, 0, 0, 0.6);
 }
 
+/* Do Not Edit */
 nav > ul {
   display: flex;
   align-items: center;
   justify-content:space-between;
-  padding: 20px;
-
 }
 
-label {
-  text-decoration: none;
-  color: white
+/* Do Not Edit */
+nav > ul > li {
+ margin-top: 20px;
+ margin-right: 30px;
 }
 
 
+/* Do Not Edit */
 nav > ul > li > a {
   text-decoration: none;
   color: white
 }
 
+/* Do Not Edit */
 nav > ul > li > a:hover {
   color: red;
 }
 
-
-
-p {
-  color: white;
+/* Do Not Edit */
+button {
+  color: black;
+  border-color: transparent;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 370px !important;
-  height: 300px;
-  background-color: rgba(255, 0, 0, 0.6);
-  margin: 150px;
-  border-radius: 15px;
-}
-
+/* Do Not Edit */
 footer {
   bottom: 0;
   width: 100%;
+  height: 30px;
   position: absolute;
   color: white;
   text-align: center;
 }
 
+/* Do Not Edit */
+.container {
+  width: 27% !important;
+  height: 35%;
+  background-color: rgba(255, 0, 0, 0.6);
+  margin-top: 5%;
+  border-radius: 15px;
+}
+
+/* Do Not Edit */
+.buttonLogout {
+  color: white;
+  background-color: transparent;
+}
+
+/* Do Not Edit */
+.buttonLogout:hover {
+  color: red;
+}
+
+.borderTransparent {
+  border-color: transparent;
+}
+
+/* Do Not Edit */
 #pizza-cursor {
   position: fixed;
   width: 70px;
@@ -82,3 +102,22 @@ footer {
   pointer-events: none;
 }
 
+
+.card-title{
+  text-align: center;
+  margin: 2%;
+}
+
+.card-text {
+  color: black;
+  text-align: center;
+}
+
+.row {
+  width: 100%;
+  margin: 0px;
+}
+
+.mx {
+  margin: 0 5%;
+}

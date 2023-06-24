@@ -32,26 +32,27 @@ footer {
   text-align: center;
 }
 
-form {
-  background-color: red;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  background-color: rgb(220, 68, 68);
   width: 400px;
   height: 300px;
   margin: 50px;
   border-radius: 5px;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 800px;
-}
-
 #pizza-cursor {
   position: fixed;
-  width: 40px;
-  height: 40px;
-  background-image: url('../images/pizza-mouse.png');
+  width: 70px;
+  height: 70px;
+  background-image: url('../images/cursor-pizza.png');
   background-size: cover;
   pointer-events: none;
+}
+
+h1 {
+  color: white;
 }

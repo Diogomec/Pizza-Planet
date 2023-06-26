@@ -14,6 +14,7 @@ body {
 
 h1 {
   color: white !important;
+  text-align: center;
 }
 
 h2 {
@@ -56,6 +57,49 @@ nav > ul > li > a:hover {
 button {
   color: black;
   border-color: transparent;
+  border-radius: 8px !important;
+  padding: 5px 20px;
+  margin: 20px 0 !important;
+}
+
+/* Do Not Edit */
+.form-p > a{
+  text-decoration: none;
+  color: white;
+}
+
+/* Do Not Edit */
+.form-p > a:hover{
+  color: red;
+}
+
+.a-menu{
+  text-decoration: none;
+  color: black;
+}
+
+/* Do Not Edit */
+button:hover{
+  border-color: black;
+}
+
+/* Do Not Edit */
+label{
+  margin: 15px 0px;
+}
+
+/* Do Not Edit */
+input{
+  border-radius: 8px;
+  color: black;
+}
+
+/* Do Not Edit */
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Do Not Edit */
@@ -81,15 +125,14 @@ footer {
 .buttonLogout {
   color: white;
   background-color: transparent;
+  margin: 0 !important;
 }
 
 /* Do Not Edit */
 .buttonLogout:hover {
-  color: red;
-}
 
-.borderTransparent {
-  border-color: transparent;
+  background-color: white;
+  color: black;
 }
 
 /* Do Not Edit */
@@ -103,21 +146,73 @@ footer {
 }
 
 
-.card-title{
-  text-align: center;
-  margin: 2%;
+
+/* ---------Card Classes--------- */
+
+/* Do Not Edit */
+.card-img > img{
+  width: 90%;
+  object-fit: cover;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+
 }
 
-.card-text {
+/* Do Not Edit */
+.card-container {
+  max-width: 300px;
+  background-color: rgba(255, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+/* Do Not Edit */
+.card-collection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Do Not Edit */
+.card-elements {
+  text-align: center;
+}
+
+/* Do Not Edit */
+.card-elements > h5{
+  margin: 10px 0;
+}
+
+/* Do Not Edit */
+.card-elements > p{
+  margin-top: 10px;
+}
+/* Do Not Edit */
+.menu-title{
+  margin: 40px;
+}
+
+
+
+/* ---------Shooping Cart--------- */
+
+/* .cart{
+background-color: black;
+border-radius: 4px;
+position: relative;
+padding: 10px;
+}
+
+.cartAmount {
+  background-color: white;
   color: black;
-  text-align: center;
+  border-radius: 3px;
+  padding: 3px;
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  font-size: 16px;
 }
-
-.row {
-  width: 100%;
-  margin: 0px;
-}
-
-.mx {
-  margin: 0 5%;
-}
+ */

@@ -35,25 +35,6 @@
 </nav>
 {{/if}}
 
-<h1>Choose your Pizzas here!</h1>
- 
-</ul>
- 
-<div class="row">
-  {{#each data.pizzas}}
-<div class="mx-5" style="width: 22rem;">
- <div class="card my-5 " >
-    <h5 class="card-title">{{name}}</h5>
-  <img src="/images/pepperoni.jpg" class="card-img-top rounded" alt="..." style="height: 15rem;">
-  <div class="card-body">
-    <p class="card-text">Description</p>
-  </div>
-    <ul >
-    <li><a href="#">See More</a></li>
-    <li ><a href="#">Order</a></li>
-  </ul>
- </div>
- </div>
-  {{/each}}
-</div>
 
+{{> allPizzas }}
+     

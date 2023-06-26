@@ -1,19 +1,4 @@
-<nav>
-    <ul>
-        <li>
-         <a href="/"><h3>Pizza Planet</h3></a>  
-        </li>
-        <li>
-            <a href="/admin/profile">Profile</a>
-            <a href="/admin/menu">Menu</a>
-            <a href="/admin/create-a-user">Create a User</a>
-            <a href="/admin/create-a-pizza">Create a Pizza</a>
-            <form action="/auth/logout" method="post">
-             <button>Logout</button>
-            </form>/admin/:pizzaId/edit-a-pizza
-        </li>
-    </ul>
-</nav>
+{{> admin }}
 
 
 <form action="/admin/menu/{{pizza._id}}/edit-a-pizza" method="post" class="d-flex flex-column justify-content-center align-items-center">

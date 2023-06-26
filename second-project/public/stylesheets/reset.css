@@ -4,4 +4,14 @@
     padding: 0;
     color: white;
     text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+.pop{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    display: none;
 }

@@ -6,28 +6,30 @@ const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
 const User = require('../models/User.model');
 const Pizza = require('../models/Pizza.model');
 
-/* GET home page */
-router.get("/profile", (req, res, next) => {
+/* GET Profile page */
+router.get("/profile", isLoggedIn, (req, res, next) => {
   res.render("admin/profile", { userInSession: req.session.currentUser});
 });
 
-router.get("/create-a-pizza", (req, res, next) => {
+/* GET Create-A-Pizza page */
+router.get("/create-a-pizza", isLoggedIn, (req, res, next) => {
     res.render("admin/create-a-pizza", { userInSession: req.session.currentUser});
 });
 
-router.post("/create-a-pizza", (req, res, next) => {
-
+/* POST Create-A-Pizza page */
+router.post("/create-a-pizza", async (req, res, next) => {
     const { name, size, sauce, ingredients, price } = req.body
-    console.log(req.body)
-
-    Pizza.create({name, size, sauce, ingredients, price})
-    .then(pizza => console.log(pizza))
+    // console.log(req.body)
+    const pizza = await Pizza.create({name, size, sauce, ingredients, price})
+    res.redirect('/admin/menu')
 });
 
-router.get("/create-a-user", async (req, res, next) => {
+/* GET Create-A-User page */
+router.get("/create-a-user", isLoggedIn, (req, res, next) => {
     res.render("admin/create-a-user", {userInSession: req.session.currentUser});
 });
 
+/* POST Create-A-User page */
 router.post("/create-a-user", async (req, res, next) => {
     const { username, email, password, role } = req.body;
  
@@ -48,37 +50,49 @@ router.post("/create-a-user", async (req, res, next) => {
       .catch(error => next(error));
   });
 
-router.get("/menu", async (req, res, next) => {
+/* GET Menu page */
+router.get("/menu", isLoggedIn, async (req, res, next) => {
+  try {
     const pizzas = await Pizza.find();
     const userInSession = req.session.currentUser;
     const data = {pizzas, userInSession};
-    console.log(data)
+    // console.log(data)
     res.render("admin/menu", { data });
+  } catch (error) {
+      console.error('Error fetching pizzas:', error);
+      res.render('error');
+  }
 });
 
-router.get('/menu/:pizzaId', (req, res) => {
-
+/* GET Details page */
+router.get('/menu/:pizzaId', isLoggedIn, async (req, res) => {
+  try {
+    
  const { pizzaId } = req.params;
- 
-  Pizza.findById(pizzaId)
-    .then(pizzafound => res.render('admin/details.hbs', { pizza: pizzafound }))
-    .catch(error => {
-      console.log('Error while retrieving pizza details: ', error);
- 
-      // Call the error-middleware to display the error page to the user
-      next(error);
-    });
+ const pizza = await Pizza.findById(pizzaId)
+ const userInSession = req.session.currentUser;
+ const data = {pizza, userInSession};
+ res.render('admin/details', { data })
+} catch (error) {
+  console.error('Error fetching pizza:', error);
+  res.render('error');
+}
 });
 
-router.get('/menu/:pizzaId/edit-a-pizza', (req, res, next) => {
+router.get('/menu/:pizzaId/edit-a-pizza', isLoggedIn, async (req, res, next) => {
+  try {
+
   const { pizzaId } = req.params;
- 
-  Pizza.findById(pizzaId)
-    .then(pizzaToEdit => {
+
+  const pizza = await Pizza.findById(pizzaId)
+
       // console.log(bookToEdit);
-      res.render('admin/edit-a-pizza', { pizza: pizzaToEdit }); // <-- add this line
-    })
-    .catch(error => next(error));
+
+      res.render('admin/edit-a-pizza', { pizza });
+  } catch (error) {
+      console.error('Error fetching pizza:', error);
+      res.render('error');
+    }
 });
 
 router.post('/menu/:pizzaId/edit-a-pizza', (req, res, next) => {

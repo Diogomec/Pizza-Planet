@@ -1,35 +1,17 @@
-<nav>
-    <ul>
-        <li>
-         <a href="/"><h3>Pizza Planet</h3></a>  
-        </li>
-        <li>
-            <a href="/admin/profile">Profile</a>
-            <a href="/admin/menu">Menu</a>
-            <a href="/admin/create-a-user">Create a User</a>
-            <a href="/admin/create-a-pizza">Create a Pizza</a>
-            <form action="/auth/logout" method="post">
-             <button>Logout</button>
-            </form>
-        </li>
-    </ul>
-</nav>
+{{> admin }}
 
-
-<div class="row">
-   <div class="w-25 mx-5">
- <div class="card border border-white " >
-  <img src="/images/pepperoni.jpg" class="card-img-top" alt="..." style="height: 15rem;">
-  <div class="card-body">
-    <h5 class="card-title" style="color: black;">{{pizza.name}}</h5>
-    <p class="card-text">Description</p>
-  </div>
-    <ul class="list-group list-group-flush border border-white">
-    <li class="list-group-item"><a href="/admin/menu/{{pizza._id}}/edit-a-pizza" class="card-link">Update</a></li>
-    <form action="/admin/menu/{{pizza._id}}/delete-a-pizza" method="POST">
+<div class="card-collection">
+ <div class="card-container">
+    <div class="card-elements">
+      <h5>{{data.pizza.name}}</h5>
+        <div class="card-img">
+          <img src="/images/pepperoni.jpg" alt="Pizza">
+        </div>
+      <p>{{data.pizza.ingredients}}</p>
+      <button><a href="/admin/menu/{{data.pizza._id}}/edit-a-pizza" class="a-menu">Update</a></button>
+      <form action="/admin/menu/{{data.pizza._id}}/delete-a-pizza" method="POST">
       <button>Delete</button>
     </form>
-  </ul>
- </div>
- </div>
+    </div>
+  </div>
 </div>

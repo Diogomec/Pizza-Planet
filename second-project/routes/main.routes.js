@@ -12,6 +12,7 @@ router.get('/menu', async (req, res) => {
     const pizzas = await Pizza.find();
     const userInSession = req.session.currentUser;
     const data = {pizzas, userInSession};
+    console.log(pizzas.imageUrl)
     res.render('menu', { data });
     } catch (error) {
     console.error('Error fetching pizzas:', error);
@@ -26,6 +27,7 @@ router.get('/menu/:pizzaId', async (req, res) => {
  const userInSession = req.session.currentUser;
  const data = {pizza, userInSession};
  console.log(pizza, userInSession)
+ 
  res.render('details', { data })
 } catch (error) {
   console.error('Error fetching pizza:', error);

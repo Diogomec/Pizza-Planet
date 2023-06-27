@@ -7,7 +7,7 @@ const allPizzas = [
     ingredients: [" Mozzarella cheese", " Fresh basil"],
     size: "Sun - (Medium)",
     price: 10.99,
-    image: "/images/pizzas/margheritta.jpg"
+    imageUrl: "images/pizzas/margheritta.jpg"
   },
   {
     name: "Pepperoni Saturn",
@@ -15,7 +15,7 @@ const allPizzas = [
     ingredients: [" Mozzarella cheese", " Pepperoni slices"],
     size: "Sun - (Medium)",
     price: 10.99,
-    image: "/images/pizzas/pepperonni.jpg"
+    imageUrl: "images/pizzas/pepperonni.jpg"
   },
   {
     name: "Hawaiian Earth",
@@ -23,7 +23,7 @@ const allPizzas = [
     ingredients: [" Mozzarella cheese", " Ham", " Pineapple"],
     size: "Sun - (Medium)",
     price: 11.99,
-    image: "/images/pizzas/hawaiian.jpg"
+    imageUrl: "images/pizzas/hawaiian.jpg"
   },
   {
     name: "Mozzarella Uranus",
@@ -31,7 +31,7 @@ const allPizzas = [
     ingredients: [" Mozzarella-cheese"],
     size: "Sun - (Medium)",
     price: 9.99,
-    image: "/images/pizzas/mozzarella.jpg"
+    imageUrl: "images/pizzas/mozzarella.jpg"
   },
   {
     name: "Napolitan Neptune",
@@ -39,7 +39,7 @@ const allPizzas = [
     ingredients: [" Mozzarella cheese", " Pepperoni", " Sausage", " Bell peppers", " Onions", " Olives"],
     size: "Sun - (Medium)",
     price: 12.99,
-    image: "/images/pizzas/napolitan.jpg"
+    imageUrl: "images/pizzas/napolitan.jpg"
   },
   {
     name: "Moon Cheese",
@@ -47,7 +47,7 @@ const allPizzas = [
     ingredients: [" Mozzarella cheese", " Cheddar cheese", " Parmesan cheese", " Gorgonzola cheese"],
     size: "Sun - (Medium)",
     price: 11.99,
-    image: "/images/pizzas/4-cheese.jpg"
+    imageUrl: "images/pizzas/4-cheese.jpg"
   },
   {
     name: "Romeo and Jupiter",
@@ -55,7 +55,7 @@ const allPizzas = [
     ingredients: [" Sliced strawberries", " Bananas", " Whipped cream"],
     size: "Sun - (Medium)",
     price: 6.99,
-    image: "/images/pizzas/romeo-juliette.jpg"
+    imageUrl: "images/pizzas/romeo-juliette.jpg"
   },
   {
     name: "Veggie Venus",
@@ -63,7 +63,7 @@ const allPizzas = [
     ingredients: [" Vegan cheese", " Bell peppers", " Onions", " Mushrooms", " Olives"],
     size: "Sun - (Medium)",
     price: 10.99,
-    image: "/images/pizzas/veggie.jpg"
+    imageUrl: "images/pizzas/veggie.jpg"
   },
   {
     name: "Mercury Bites",
@@ -71,7 +71,7 @@ const allPizzas = [
     ingredients: [" Mozzarella cheese", " Mini sausages", " Smiley face-shaped pepperoni"],
     size: "Sun - (Medium)",
     price: 4.99,
-    image: "/images/pizzas/cheesy-bites.jpg"
+    imageUrl: "images/pizzas/cheesy-bites.jpg"
   }
 ];
 

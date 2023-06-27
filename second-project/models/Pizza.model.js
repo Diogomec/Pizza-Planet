@@ -4,7 +4,7 @@ const pizzaSchema = new Schema(
   {
     imageUrl: {
       type: String,
-      default: "/images/pepperoni.jpg"
+      default: "images/pizzas/cheesy-bites.jpg"
     },
     name: {
       type: String,
@@ -20,7 +20,6 @@ const pizzaSchema = new Schema(
       default: "Sun - (Medium)"
     },
     price: Number,
-    image: String
   },
   {   
     timestamps: true

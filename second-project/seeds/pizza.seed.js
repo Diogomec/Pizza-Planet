@@ -2,67 +2,76 @@ const Pizza = require("../models/Pizza.model");
 
 const allPizzas = [
   {
-    name: "Margherita",
+    name: "Margherita Mars",
     sauce: "Tomato sauce",
     ingredients: [" Mozzarella cheese", " Fresh basil"],
     size: "Sun - (Medium)",
-    price: 10.99
+    price: 10.99,
+    image: "/images/pizzas/margheritta.jpg"
   },
   {
-    name: "Pepperoni",
+    name: "Pepperoni Saturn",
     sauce: "Tomato sauce",
     ingredients: [" Mozzarella cheese", " Pepperoni slices"],
     size: "Sun - (Medium)",
-    price: 10.99
+    price: 10.99,
+    image: "/images/pizzas/pepperonni.jpg"
   },
   {
-    name: "Hawaiian",
+    name: "Hawaiian Earth",
     sauce: "Tomato sauce",
     ingredients: [" Mozzarella cheese", " Ham", " Pineapple"],
     size: "Sun - (Medium)",
-    price: 11.99
+    price: 11.99,
+    image: "/images/pizzas/hawaiian.jpg"
   },
   {
-    name: "Mozzarella",
+    name: "Mozzarella Uranus",
     sauce: "Tomato sauce",
-    ingredients: [" Mozzarella cheese"],
+    ingredients: [" Mozzarella-cheese"],
     size: "Sun - (Medium)",
-    price: 9.99
+    price: 9.99,
+    image: "/images/pizzas/mozzarella.jpg"
   },
   {
-    name: "Napolitan",
+    name: "Napolitan Neptune",
     sauce: "Tomato sauce",
     ingredients: [" Mozzarella cheese", " Pepperoni", " Sausage", " Bell peppers", " Onions", " Olives"],
     size: "Sun - (Medium)",
-    price: 12.99
+    price: 12.99,
+    image: "/images/pizzas/napolitan.jpg"
   },
   {
     name: "Moon Cheese",
     sauce: "Tomato sauce",
     ingredients: [" Mozzarella cheese", " Cheddar cheese", " Parmesan cheese", " Gorgonzola cheese"],
     size: "Sun - (Medium)",
-    price: 11.99
+    price: 11.99,
+    image: "/images/pizzas/4-cheese.jpg"
   },
   {
-    name: "Romeo and Juliette",
+    name: "Romeo and Jupiter",
     sauce: "Nutella",
     ingredients: [" Sliced strawberries", " Bananas", " Whipped cream"],
     size: "Sun - (Medium)",
-    price: 6.99
+    price: 6.99,
+    image: "/images/pizzas/romeo-juliette.jpg"
   },
   {
-    name: "Veggie Supreme",
+    name: "Veggie Venus",
     sauce: "Tomato sauce",
     ingredients: [" Vegan cheese", " Bell peppers", " Onions", " Mushrooms", " Olives"],
     size: "Sun - (Medium)",
-    price: 10.99
+    price: 10.99,
+    image: "/images/pizzas/veggie.jpg"
   },
   {
-    name: "Cheesy Bites",
+    name: "Mercury Bites",
     sauce: "Tomato sauce",
     ingredients: [" Mozzarella cheese", " Mini sausages", " Smiley face-shaped pepperoni"],
     size: "Sun - (Medium)",
-    price: 4.99
+    price: 4.99,
+    image: "/images/pizzas/cheesy-bites.jpg"
   }
 ];
 

@@ -16,6 +16,7 @@ const pizzaSchema = new Schema(
       default: "Sun - (Medium)"
     },
     price: Number,
+    image: String
   },
   {   
     timestamps: true

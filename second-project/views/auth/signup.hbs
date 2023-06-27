@@ -1,17 +1,15 @@
 {{> public }}
 
 <div class="container">
-<form action="/auth/signup" method="post" class="d-flex flex-column justify-content-center align-items-center">
+<form action="/auth/signup" method="post">
 <label for="username">Username: </label>
 <input type="text" name="username" id="username" placeholder="Tony">
-<label for="email">Email: </label>
+<label for="email" >Email: </label>
 <input type="email" name="email" id="email" placeholder="tony@pizzaplanet.com">
-<label for="password">Password: </label>
+<label for="password" >Password: </label>
 <input type="password" name="password" id="password" placeholder="******">
-{{!-- <label for="cellphone">Cellphone: </label>
-<input type="number" name="cellphone" id="cellphone"> --}}
 <button type="submit">Signup</button>
-<p>Already have an account? <a href="/auth/login">Login now!</a></p>
+<p class="form-p">Already have an account? <a href="/auth/login">Login now!</a></p>
 
 
  {{#if errorMessage}}
@@ -19,3 +17,4 @@
     {{/if}}
 </form>
 </div>
+

@@ -1,0 +1,59 @@
+{{#if data.userInSession}}
+<nav>
+    <ul>
+        <li>
+         <a href="/"><h3>Pizza Planet</h3></a>  
+        </li>
+        <li>
+            <a href="/menu">Menu |</a>
+            <a href="/users/profile">Profile |</a>
+            <a href="/users/my-orders">My Orders |</a>
+            <a href="/users/my-favourites">My Favourites |</a>
+            <a href="/users/create-my-pizza">Create My Pizza</a>
+        </li>
+        <li class="d-flex">
+            <form action="/auth/logout" method="post">
+             <button class="buttonLogout">Logout</button>
+            </form>
+             <button class="buttonLogout" id="buttonCart">Cart</button>
+       
+        </li>
+    </ul>
+</nav>
+{{else}}
+<nav>
+    <ul>
+        <li>
+            <a href="/"><h3>Pizza Planet</h3></a>  
+        </li>
+        <li>
+            <a href="/menu">Menu |</a>
+            <a href="/auth/signup">Signup |</a>
+            <a href="/auth/login">Login |</a>
+            <a href="/users/profile">Profile</a>
+        </li>
+        <li>
+             <button class="buttonLogout" id="buttonCart">Cart</button>
+        </li>
+    </ul>
+</nav>
+{{/if}}
+
+
+<div class="card-collection">
+<div class="card-container shop-item">
+    <div class="card-elements">
+      <h5 class="shop-item-title">{{data.pizza.name}}</h5>
+        <div class="card-img">
+          <img src="{{data.pizza.imageUrl}}" alt="Pizza" class="shop-item-image">
+        </div>
+      <p>{{data.pizza.ingredients}}</p>
+      <p class="shop-item-price">{{data.pizza.price}} €</p>
+      <button class="order-button">Order</button>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+
+{{> shoppingCart }}

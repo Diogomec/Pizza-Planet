@@ -1,19 +1,21 @@
 {{#if data.userInSession}}
 <nav>
     <ul>
-        <li>
+       <li>
          <a href="/"><h3>Pizza Planet</h3></a>  
         </li>
         <li>
-            <a href="/menu">Menu</a>
-            <a href="/users/profile">Profile</a>
-            <a href="#">My Orders</a>
-            <a href="#">My Favourites</a>
+            <a href="/menu">Menu |</a>
+            <a href="/users/profile">Profile |</a>
+            <a href="#">My Orders |</a>
+            <a href="#">My Favourites |</a>
             <a href="#">Create My Pizza</a>
+        </li>
+        <li class="d-flex">
             <form action="/auth/logout" method="post">
-             <button>Logout</button>
+             <button class="buttonLogout">Logout</button>
             </form>
-            
+            <button class="buttonLogout" id="buttonCart">Cart</button>
         </li>
     </ul>
 </nav>
@@ -24,34 +26,19 @@
             <a href="/"><h3>Pizza Planet</h3></a>  
         </li>
         <li>
-            <a href="/menu">Menu</a>
-            <a href="/auth/signup">Signup</a>
-            <a href="/auth/login">Login</a>
+            <a href="/menu">Menu |</a>
+            <a href="/auth/signup">Signup |</a>
+            <a href="/auth/login">Login |</a>
             <a href="/users/profile">Profile</a>
-            
+        </li>
+        <li>
+             <button class="buttonLogout" id="buttonCart">Cart</button>
         </li>
     </ul>
 </nav>
 {{/if}}
 
-<h1>Choose your Pizzas here!</h1>
- 
-</ul>
- 
-<div class="row">
-  {{#each data.pizzas}}
-<div class="w-25 mx-5">
- <div class="card border border-white " >
-  <img src="/images/pepperoni.jpg" class="card-img-top" alt="..." style="height: 15rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{name}}</h5>
-    <p class="card-text">Description</p>
-  </div>
-    <ul class="list-group list-group-flush border border-white">
-    <li class="list-group-item"><a href="#" class="card-link">See More</a></li>
-    <li class="list-group-item"><a href="#" class="card-link">Order</a></li>
-  </ul>
- </div>
- </div>
-  {{/each}}
-</div>
+
+
+{{> allPizzas }}
+{{> shoppingCart }}

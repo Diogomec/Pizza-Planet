@@ -1,8 +1,10 @@
+/* Do Not Edit */
 @font-face {
   font-family: 'Turret Road';
   src: url('../fonts/TurretRoad-Bold.ttf') format('truetype');
 }
 
+/* Do Not Edit */
 body {
   background-image: url('../images/bg-universe.jpg');
   min-height: 100vh;
@@ -10,63 +12,133 @@ body {
   font-family: 'Turret Road', sans-serif !important;
 }
 
+h1 {
+  color: white !important;
+  text-align: center;
+}
 
- h2 {
+h2 {
   color: white;
 }
 
+/* Do Not Edit */
 nav {
   width: 100%;
-  height: 80px;
+  height: 70px;
   background-color: rgba(255, 0, 0, 0.6);
+
+
 }
 
+/* Do Not Edit */
 nav > ul {
   display: flex;
   align-items: center;
   justify-content:space-between;
-  padding: 20px;
+}
+
+/* Do Not Edit */
+nav > ul > li {
+ margin-top: 20px;
+ margin-right: 30px;
 
 }
 
-label {
-  text-decoration: none;
-  color: white
-}
 
-
+/* Do Not Edit */
 nav > ul > li > a {
   text-decoration: none;
   color: white
 }
 
+/* Do Not Edit */
 nav > ul > li > a:hover {
   color: red;
 }
 
+/* Do Not Edit */
+button {
+  color: black;
+  border-color: transparent;
+  border-radius: 8px !important;
+  padding: 5px 20px;
+  margin: 20px 0 !important;
+}
+
+/* Do Not Edit */
+.form-p > a{
+  text-decoration: none;
+  color: white;
+}
+
+/* Do Not Edit */
+.form-p > a:hover{
+  color: red;
+}
+
+.a-menu{
+  text-decoration: none;
+  color: black;
+}
+
+/* Do Not Edit */
+button:hover{
+  border-color: black;
+}
+
+/* Do Not Edit */
+label{
+  margin: 15px 0px;
+}
+
+/* Do Not Edit */
+input, select, option, textarea{
+  border-radius: 8px;
+  color: black;
+}
+
+/* Do Not Edit */
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Do Not Edit */
 footer {
   bottom: 0;
   width: 100%;
-  position: relative;
+  height: 30px;
+  position: absolute;
   color: white;
   text-align: center;
 }
 
-p {
-  color: white;
-}
-
+/* Do Not Edit */
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 370px !important;
-  height: 300px;
+  width: 27% !important;
+  height: 35%;
   background-color: rgba(255, 0, 0, 0.6);
-  margin: 150px;
+  margin-top: 5%;
   border-radius: 15px;
 }
 
+/* Do Not Edit */
+.buttonLogout {
+  color: white;
+  background-color: transparent;
+  margin: 0 !important;
+}
+
+/* Do Not Edit */
+.buttonLogout:hover {
+
+  background-color: white;
+  color: black;
+}
+
+/* Do Not Edit */
 #pizza-cursor {
   position: fixed;
   width: 70px;
@@ -76,6 +148,105 @@ p {
   pointer-events: none;
 }
 
-h1 {
-  color: white !important;
+
+
+/* ---------Card Classes--------- */
+
+/* Do Not Edit */
+.card-img > img{
+  width: 90%;
+  object-fit: cover;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+
+}
+
+/* Do Not Edit */
+.card-container {
+  max-width: 300px;
+  background-color: rgba(255, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+/* Do Not Edit */
+.card-collection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Do Not Edit */
+.card-elements {
+  text-align: center;
+}
+
+/* Do Not Edit */
+.card-elements > h5{
+  margin: 10px 0;
+}
+
+/* Do Not Edit */
+.card-elements > p{
+  margin-top: 10px;
+}
+/* Do Not Edit */
+.menu-title{
+  margin: 40px;
+}
+
+
+
+/* ---------Shooping Cart--------- */
+
+/* .cart{
+background-color: black;
+border-radius: 4px;
+position: relative;
+padding: 10px;
+}
+
+.cartAmount {
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  padding: 3px;
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  font-size: 16px;
+}
+ */
+
+
+#shopping-cart-sidebar{
+  right:0;
+  top: 70px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 30%;
+  height: 100%;
+  border-radius: 10px;
+  position: fixed;
+  display: none;
+
+}
+
+.choose-button{
+  width: 80%;
+}
+
+
+.cart-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+ 
+
+}
+
+.cart-input{
+  width:20%;
+  text-align: center;
 }

@@ -5,15 +5,17 @@
          <a href="/"><h3>Pizza Planet</h3></a>  
         </li>
         <li>
-            <a href="/menu">Menu</a>
-            <a href="/users/profile">Profile</a>
-            <a href="#">My Orders</a>
-            <a href="#">My Favourites</a>
-            <a href="#">Create My Pizza</a>
+            <a href="/menu">Menu |</a>
+            <a href="/users/profile">Profile |</a>
+            <a href="/users/my-orders">My Orders |</a>
+            <a href="/users/my-favourites">My Favourites |</a>
+            <a href="/users/create-my-pizza">Create My Pizza</a>
+        </li>
+        <li class="d-flex">
             <form action="/auth/logout" method="post">
-             <button>Logout</button>
+             <button class="buttonLogout">Logout</button>
             </form>
-            
+            <button class="buttonLogout" id="buttonCart">Cart</button>
         </li>
     </ul>
 </nav>
@@ -24,12 +26,18 @@
             <a href="/"><h3>Pizza Planet</h3></a>  
         </li>
         <li>
-            <a href="/menu">Menu</a>
-            <a href="/auth/signup">Signup</a>
-            <a href="/auth/login">Login</a>
+            <a href="/menu">Menu |</a>
+            <a href="/auth/signup">Signup |</a>
+            <a href="/auth/login">Login |</a>
             <a href="/users/profile">Profile</a>
-            
+        </li>
+        <li>
+             <button class="buttonLogout" id="buttonCart">Cart</button>
         </li>
     </ul>
 </nav>
 {{/if}}
+
+{{> shoppingCart }}
+
+

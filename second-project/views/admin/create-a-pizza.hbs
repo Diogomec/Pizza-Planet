@@ -1,38 +1,45 @@
    {{> admin }}
 
-<form action="/admin/create-a-pizza" method="post" class="d-flex flex-column justify-content-center align-items-center">
-<label for="name">Name: </label>
-<input type="text" name="name" id="name" placeholder="Pizza Name">
-<label for="sauce">Sauce: </label>
-<input type="text" name="sauce" id="sauce" placeholder="Pomodoro">
-<label for="size">Choose a size:</label>
-<select name="size" id="size">
-    <option value="">--Please choose an option--</option>
-    <option value="small">Small</option>
-    <option value="medium">Medium</option>
-    <option value="large">Large</option>
-</select>
-<label for="ingredient1">Ingredient 1:</label>
-<select name="ingredient" id="ingredient1">
-    <option value="">--Please choose an option--</option>
-    <option value="Tomato">Tomato</option>
-    <option value="Ham">Ham</option>
-    <option value="Cheese">Cheese</option>
-</select>
-<label for="ingredient2">Ingredient 2:</label>
-<select name="ingredient" id="ingredient2">
-    <option value="">--Please choose an option--</option>
-    <option value="Tomato">Tomato</option>
-    <option value="Ham">Ham</option>
-    <option value="Cheese">Cheese</option>
-</select>
-<label for="ingredient3">Ingredient 3:</label>
-<select name="ingredient" id="ingredient3">
-    <option value="">--Please choose an option--</option>
-    <option value="Tomato">Tomato</option>
-    <option value="Ham">Ham</option>
-    <option value="Cheese">Cheese</option>
-</select>
-<label for="price">Price: </label>
-<input type="number" name="price" id="price" step="0.01">
-<button type="submit">Create a Pizza</button>
+<div class="container">
+    <form action="/admin/create-a-pizza" >
+        <label for="name">Image: </label>
+        <input type="file" name="image" accept="image/png, image/jpeg">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="Pepperoni">
+        <label for="sauce">Sauce: </label>
+        <input type="text" name="sauce" id="sauce" placeholder="Pomodoro">
+        <label for="size">Choose a size:</label>
+        <select name="size" id="size">
+            <option value="">--Please choose an option--</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <label for="ingredient1">Ingredient 1:</label>
+        <select name="ingredient" id="ingredient1">
+            <option value="">--Please choose an option--</option>
+            <option value="Tomato">Tomato</option>
+            <option value="Ham">Ham</option>
+            <option value="Cheese">Cheese</option>
+        </select>
+        <label for="ingredient2">Ingredient 2:</label>
+        <select name="ingredient" id="ingredient2">
+            <option value="">--Please choose an option--</option>
+            <option value="Tomato">Tomato</option>
+            <option value="Ham">Ham</option>
+            <option value="Cheese">Cheese</option>
+        </select>
+        <label for="ingredient3">Ingredient 3:</label>
+        <select name="ingredient" id="ingredient3">
+            <option value="">--Please choose an option--</option>
+            <option value="Tomato">Tomato</option>
+            <option value="Ham">Ham</option>
+            <option value="Cheese">Cheese</option>
+        </select>
+         <label for="description">Description: </label>
+         <textarea name="description" id="description" cols="30" rows="3"></textarea>
+        <label for="price">Price: </label>
+        <input type="number" name="price" id="price" step="0.01" placeholder="10.99">
+        <button type="submit">Create a Pizza</button>
+    </form>
+</div>

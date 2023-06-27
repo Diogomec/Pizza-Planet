@@ -2,6 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const pizzaSchema = new Schema(
   {
+    imageUrl: {
+      type: String,
+      default: "/images/pepperoni.jpg"
+    },
     name: {
       type: String,
       trim: true,

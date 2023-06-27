@@ -11,10 +11,11 @@
             <a href="/users/my-favourites">My Favourites |</a>
             <a href="/users/create-my-pizza">Create My Pizza</a>
         </li>
-        <li>
+        <li class="d-flex">
             <form action="/auth/logout" method="post">
              <button class="buttonLogout">Logout</button>
             </form>
+            <button class="buttonLogout" id="buttonCart">Cart</button>
         </li>
     </ul>
 </nav>
@@ -30,14 +31,13 @@
             <a href="/auth/login">Login |</a>
             <a href="/users/profile">Profile</a>
         </li>
-        {{!-- <li>
-            <div class="cart">
-                <button type="button"><i class="fas fa-shopping-cart p-2"></i></button>
-                <div class="cartAmount">0</div>
-             </div>
-             </div>
-        </li> --}}
+        <li>
+             <button class="buttonLogout" id="buttonCart">Cart</button>
+        </li>
     </ul>
 </nav>
 {{/if}}
+
+{{> shoppingCart }}
+
 

@@ -1,5 +1,6 @@
    {{> admin }}
-
+ 
+<div class="container">
 <form action="/admin/create-a-user" method="post" class="d-flex flex-column justify-content-center align-items-center">
 <label for="username">Username: </label>
 <input type="text" name="username" id="username" placeholder="Tony">
@@ -7,11 +8,14 @@
 <input type="email" name="email" id="email" placeholder="tony@pizzaplanet.com">
 <label for="password">Password: </label>
 <input type="password" name="password" id="password" placeholder="******">
-<select name="role" id="role">Role: 
+<label for="role">Type of role: </label>
+<select name="role" id="role">
 <option value="User">User</option>
 <option value="Admin">Admin</option>
 </select>
 <button type="submit">Signup</button>
+</div>
+
 
 
  {{#if errorMessage}}

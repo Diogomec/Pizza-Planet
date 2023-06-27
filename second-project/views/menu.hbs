@@ -11,10 +11,11 @@
             <a href="#">My Favourites |</a>
             <a href="#">Create My Pizza</a>
         </li>
-        <li>
+        <li class="d-flex">
             <form action="/auth/logout" method="post">
              <button class="buttonLogout">Logout</button>
             </form>
+            <button class="buttonLogout" id="buttonCart">Cart</button>
         </li>
     </ul>
 </nav>
@@ -29,12 +30,15 @@
             <a href="/auth/signup">Signup |</a>
             <a href="/auth/login">Login |</a>
             <a href="/users/profile">Profile</a>
-            
+        </li>
+        <li>
+             <button class="buttonLogout" id="buttonCart">Cart</button>
         </li>
     </ul>
 </nav>
 {{/if}}
 
 
+
 {{> allPizzas }}
-     
+{{> shoppingCart }}

@@ -13,9 +13,9 @@
         </li>
         <li class="d-flex">
             <form action="/auth/logout" method="post">
-             <button class="buttonLogout">Logout</button>
+             <button class="nav-button">Logout</button>
             </form>
-             <button class="buttonLogout" id="buttonCart">Cart</button>
+             <button class="nav-button" id="buttonCart">Cart</button>
        
         </li>
     </ul>
@@ -33,7 +33,7 @@
             <a href="/users/profile">Profile</a>
         </li>
         <li>
-             <button class="buttonLogout" id="buttonCart">Cart</button>
+             <button class="nav-button" id="buttonCart">Cart</button>
         </li>
     </ul>
 </nav>
@@ -45,7 +45,7 @@
     <div class="card-elements">
       <h5 class="shop-item-title">{{data.pizza.name}}</h5>
         <div class="card-img">
-          <img src="{{data.pizza.imageUrl}}" alt="Pizza" class="shop-item-image">
+          <img src="../{{data.pizza.imageUrl}}" alt="Pizza" class="shop-item-image">
         </div>
       <p>{{data.pizza.ingredients}}</p>
       <p class="shop-item-price">{{data.pizza.price}} €</p>

@@ -14,11 +14,12 @@ const pizzaSchema = new Schema(
     },
     sauce: String,
     ingredients: [String],
-    size: {
-      type: String,
-      enum: ["Asteroid - (Small)", "Sun - (Medium)", "Galaxy - (Large)"],
-      default: "Sun - (Medium)"
-    },
+    sizes: [
+      {
+        name: String,
+        price: Number
+      }
+    ],
     price: Number,
   },
   {   

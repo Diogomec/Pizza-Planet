@@ -1,8 +1,8 @@
-<h1 class="menu-title" id="bt">Choose your Pizzas here!</h1>
+<h1 class="menu-title">Choose your Pizzas here!</h1>
  
-<div class="card-collection">
+ <div class="card-collection">
   {{#each data.pizzas}}
- <div class="card-container shop-item">
+  <div class="card-container shop-item">
     <div class="card-elements">
       <h5 class="shop-item-title">{{name}}</h5>
         <div class="card-img">
@@ -31,7 +31,13 @@
 
       <button class="choose-button"><a href="menu/{{_id}}" class="a-menu">Choose</a></button>
       {{!-- <button class="order-button">Order</button> --}}
+      <p>{{ingredients}}</p>
+      <p class="shop-item-price">{{price}} €</p>
+        <div class="card-buttons">
+          <button><a href="menu/{{_id}}">More Info</a></button>
+          <button class="order-button">Order</button>
+        </div>
     </div>
   </div>
-   {{/each}}
+  {{/each}}
 </div>

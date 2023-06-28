@@ -1,15 +1,7 @@
-/* Do Not Edit */
-@font-face {
-  font-family: 'Turret Road';
-  src: url('../fonts/TurretRoad-Bold.ttf') format('truetype');
-}
-
-/* Do Not Edit */
 body {
   background-image: url('../images/bg-universe.jpg');
   min-height: 100vh;
-  cursor: none;
-  font-family: 'Turret Road', sans-serif !important;
+  
 }
 
 h1 {
@@ -17,11 +9,9 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  color: white;
-}
 
-/* Do Not Edit */
+/* ----------Nav Bar---------- */
+
 nav {
   width: 100%;
   height: 70px;
@@ -30,33 +20,161 @@ nav {
 
 }
 
-/* Do Not Edit */
 nav > ul {
   display: flex;
   align-items: center;
   justify-content:space-between;
 }
 
-/* Do Not Edit */
 nav > ul > li {
  margin-top: 20px;
  margin-right: 30px;
 
 }
 
-
-/* Do Not Edit */
 nav > ul > li > a {
   text-decoration: none;
   color: white
 }
 
-/* Do Not Edit */
 nav > ul > li > a:hover {
   color: red;
 }
 
-/* Do Not Edit */
+.nav-button {
+  color: white;
+  background-color: transparent;
+  margin: 0 !important;
+}
+
+.nav-button:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+/* ----------Forms---------- */
+
+.container {
+  width: 27% !important;
+  height: 35%;
+  background-color: rgba(255, 0, 0, 0.6);
+  margin-top: 5%;
+  border-radius: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  margin: 15px 0px;
+}
+
+
+input, select, option, textarea {
+  border-radius: 8px;
+  color: black;
+}
+
+
+.white-links > a {
+  text-decoration: none;
+  color: white;
+}
+
+.white-links > a:hover {
+  color: red;
+}
+
+
+
+/* ---------Pizza Card--------- */
+
+.menu-title{
+  margin: 40px;
+}
+
+.card-collection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.card-img > img {
+  width: 90%;
+  object-fit: cover;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+
+}
+
+.card-container {
+  max-width: 400px;
+  background-color: rgba(255, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.card-elements {
+  text-align: center;
+}
+
+.card-elements > p {
+  margin-top: 10px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card-buttons > button {
+  width: 30%;
+}
+
+
+.shop-item-title {
+  margin: 10px 0;
+}
+
+
+
+/* ---------Shooping Cart--------- */
+
+#shopping-cart-sidebar{
+  right:0;
+  top: 70px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 30%;
+  height: 90%;
+  border-radius: 10px;
+  position: fixed;
+  display: none;
+
+}
+
+.cart-row {
+  display: flex;
+  align-items: center;
+}
+
+.card-buttons > button > a {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+/* ----------Button---------- */
+
 button {
   color: black;
   border-color: transparent;
@@ -65,47 +183,15 @@ button {
   margin: 20px 0 !important;
 }
 
-/* Do Not Edit */
-.form-p > a{
-  text-decoration: none;
-  color: white;
-}
-
-/* Do Not Edit */
-.form-p > a:hover{
-  color: red;
-}
-
-.a-menu{
-  text-decoration: none;
-  color: black;
-}
-
-/* Do Not Edit */
-button:hover{
+button:hover {
   border-color: black;
 }
 
-/* Do Not Edit */
-label{
-  margin: 15px 0px;
-}
 
-/* Do Not Edit */
-input, select, option, textarea{
-  border-radius: 8px;
-  color: black;
-}
 
-/* Do Not Edit */
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-/* Do Not Edit */
+/* ----------Footer---------- */
+
 footer {
   bottom: 0;
   width: 100%;
@@ -115,30 +201,14 @@ footer {
   text-align: center;
 }
 
-/* Do Not Edit */
-.container {
-  width: 27% !important;
-  height: 35%;
-  background-color: rgba(255, 0, 0, 0.6);
-  margin-top: 5%;
-  border-radius: 15px;
+.small-price, .medium-price, .large-price {
+  display: none;
 }
 
-/* Do Not Edit */
-.buttonLogout {
-  color: white;
-  background-color: transparent;
-  margin: 0 !important;
-}
 
-/* Do Not Edit */
-.buttonLogout:hover {
 
-  background-color: white;
-  color: black;
-}
+/* ----------Cursor---------- */
 
-/* Do Not Edit */
 #pizza-cursor {
   position: fixed;
   width: 70px;
@@ -146,111 +216,4 @@ footer {
   background-image: url('../images/cursor-pizza.png');
   background-size: cover;
   pointer-events: none;
-}
-
-
-
-/* ---------Card Classes--------- */
-
-/* Do Not Edit */
-.card-img > img{
-  width: 90%;
-  object-fit: cover;
-  margin: auto;
-  display: block;
-  border-radius: 10px;
-
-}
-
-/* Do Not Edit */
-.card-container {
-  max-width: 300px;
-  background-color: rgba(255, 0, 0, 0.6);
-  border-radius: 10px;
-}
-
-/* Do Not Edit */
-.card-collection {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-/* Do Not Edit */
-.card-elements {
-  text-align: center;
-}
-
-/* Do Not Edit */
-.card-elements > h5{
-  margin: 10px 0;
-}
-
-/* Do Not Edit */
-.card-elements > p{
-  margin-top: 10px;
-}
-/* Do Not Edit */
-.menu-title{
-  margin: 40px;
-}
-
-
-
-/* ---------Shooping Cart--------- */
-
-/* .cart{
-background-color: black;
-border-radius: 4px;
-position: relative;
-padding: 10px;
-}
-
-.cartAmount {
-  background-color: white;
-  color: black;
-  border-radius: 3px;
-  padding: 3px;
-  position: absolute;
-  top: -15px;
-  right: -10px;
-  font-size: 16px;
-}
- */
-
-
-#shopping-cart-sidebar{
-  right:0;
-  top: 70px;
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 30%;
-  height: 100%;
-  border-radius: 10px;
-  position: fixed;
-  display: none;
-
-}
-
-.choose-button{
-  width: 80%;
-}
-
-
-.cart-row{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
- 
-
-}
-
-.cart-input{
-  width:20%;
-  text-align: center;
-}
-
-.small-price, .medium-price, .large-price {
-  display: none;
 }

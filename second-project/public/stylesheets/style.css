@@ -1,7 +1,7 @@
 body {
   background-image: url('../images/bg-universe.jpg');
   min-height: 100vh;
-  
+  cursor: none;
 }
 
 h1 {
@@ -218,9 +218,9 @@ footer {
 
 #pizza-cursor {
   position: fixed;
+  pointer-events: none;
   width: 70px;
   height: 70px;
   background-image: url('../images/cursor-pizza.png');
-  background-size: cover;
-  pointer-events: none;
+  background-size: contain;
 }

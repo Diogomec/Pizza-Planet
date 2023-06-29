@@ -45,7 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener('mousemove', function(event) {
-    let pizzaCursor = document.querySelector('.pizza-cursor');
-    pizzaCursor.style.left = (event.clientX - pizzaCursor.offsetWidth / 2) + 'px';
-    pizzaCursor.style.top = (event.clientY - pizzaCursor.offsetHeight / 2) + 'px';
+    var mouseX = event.clientX;
+    var mouseY = event.clientY;
+  
+    var pizzaCursor = document.getElementById('pizza-cursor');
+    pizzaCursor.style.left = (mouseX - 20) + 'px';
+    pizzaCursor.style.top = (mouseY - 20) + 'px';
   });

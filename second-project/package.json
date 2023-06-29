@@ -16,6 +16,7 @@
     "hbs": "^4.2.0",
     "mongoose": "^7.3.0",
     "morgan": "^1.10.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "stripe": "^12.10.0"
   }
 }

@@ -19,14 +19,10 @@ button.onclick = function() {
 function ready() {
 
   let cartItems = document.getElementsByClassName('cart-items')[0]
-  const cart = JSON.parse(localStorage.getItem("Pizza"))
-  
-
-  if(cart !== null){
-  
-    cartItems.innerHTML = cart
+  const cart = getCartFromLocalStorage();
+  if (cart !== null) {
+    cartItems.innerHTML = cart;
   }
- console.log(localStorage.getItem("Pizza"))
   
 
   let removeCartItemButtons = document.getElementsByClassName('btn-danger')
@@ -58,12 +54,16 @@ function purchaseClicked() {
       cartItems.removeChild(cartItems.firstChild)
   }
   updateCartTotal()
+
+  saveCartToLocalStorage()
 }
 
 function removeCartItem(event) {
   let buttonClicked = event.target
   buttonClicked.parentElement.parentElement.remove()
   updateCartTotal()
+
+  saveCartToLocalStorage()
 }
 
 function quantityChanged(event) {
@@ -72,6 +72,8 @@ function quantityChanged(event) {
       input.value = 1
   }
   updateCartTotal()
+
+  saveCartToLocalStorage()
 }
 
 function addToCartClicked (event){
@@ -84,9 +86,12 @@ function addToCartClicked (event){
   addItemToCart(title, price, imageSrc)
   updateCartTotal()
 
+  saveCartToLocalStorage()
+
 }
 
 function addItemToCart(title, price, imageSrc){
+
   let cartItems = document.getElementsByClassName('cart-items')[0]
   let cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     for (let i = 0; i < cartItemNames.length; i++) {
@@ -95,34 +100,24 @@ function addItemToCart(title, price, imageSrc){
             return
         }
     }
-  let cartRowContents = `
-              <div class="cart-row">
-            <span class=cart-item-title>${title}</span>
-      
-        <span class="cart-price" >${price}</span>
-        <div class="cart-quantity">
-            <input  type="number" value="1" class="cart-input cart-quantity-input">
-            <button class="btn btn-danger" type="button">REMOVE</button>
-            </div>
-        </div>
-     `
-
-
-  const cart = localStorage.getItem("Pizza")
-  if(cart === null){
-    localStorage.setItem("Pizza", JSON.stringify(cartRowContents))
-    cartItems.innerHTML = cartRowContents
+    let cartRow = document.createElement('div');
+    cartRow.classList.add('cart-row');
+    cartRow.innerHTML = `
+      <span class="cart-item-title">${title}</span>
+      <span class="cart-price">${price}</span>
+      <div class="cart-quantity">
+        <input type="number" value="1" class="cart-input cart-quantity-input">
+        <button class="btn btn-danger" type="button">REMOVE</button>
+      </div>
+    `;
+  
+    cartItems.appendChild(cartRow);
+  
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem);
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
+  
+    updateCartTotal();
   }
-  else {
-    const existingCart = JSON.parse(localStorage.getItem("Pizza"))
-    localStorage.setItem("Pizza", JSON.stringify(existingCart + cartRowContents))
-    cartItems.innerHTML = existingCart + cartRowContents 
-  }
-
-
-  cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
-  cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
-}
 
 function updateCartTotal() {
   let cartItemContainer = document.getElementsByClassName('cart-items')[0]
@@ -140,3 +135,12 @@ function updateCartTotal() {
   document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
 
+function getCartFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("Pizza")) || "";
+}
+
+function saveCartToLocalStorage() {
+  const cartItems = document.getElementsByClassName("cart-items")[0];
+  const cartContent = cartItems.innerHTML;
+  localStorage.setItem("Pizza", JSON.stringify(cartContent));
+}

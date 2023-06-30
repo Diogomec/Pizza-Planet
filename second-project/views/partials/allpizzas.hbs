@@ -19,13 +19,13 @@
           {{/each}}
         </select>
 
-        <p class="pizza-price small-price" {{#unless sizes.[0].selected}}style="display: none;"{{/unless}}>
+        <p class="pizza-price small-price shop-item-price" {{#unless sizes.[0].selected}}style="display: none;"{{/unless}}>
           Price: <span class="price-value">{{sizes.[0].price}}</span> <span class="currency">€</span>
         </p>
-        <p class="pizza-price medium-price" {{#unless sizes.[1].selected}}style="display: none;"{{/unless}}>
+        <p class="pizza-price medium-price shop-item-price" {{#unless sizes.[1].selected}}style="display: none;"{{/unless}}>
           Price: <span class="price-value">{{sizes.[1].price}}</span> <span class="currency">€</span>
         </p>
-        <p class="pizza-price large-price" {{#unless sizes.[2].selected}}style="display: none;"{{/unless}}>
+        <p class="pizza-price large-price shop-item-price" {{#unless sizes.[2].selected}}style="display: none;"{{/unless}}>
           Price: <span class="price-value">{{sizes.[2].price}}</span> <span class="currency">€</span>
         </p>
 

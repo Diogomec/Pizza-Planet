@@ -18,19 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     selector.addEventListener('change', () => {
       const selectedSize = selector.value;
 
-      if (selectedSize === 'Asteroid - (Small)') {
-        smallPrice.style.display = 'block';
-        mediumPrice.style.display = 'none';
-        largePrice.style.display = 'none';
-      } else if (selectedSize === 'Sun - (Medium)') {
-        smallPrice.style.display = 'none';
-        mediumPrice.style.display = 'block';
-        largePrice.style.display = 'none';
-      } else {
-        smallPrice.style.display = 'none';
-        mediumPrice.style.display = 'none';
-        largePrice.style.display = 'block';
-      }
+      // if (selectedSize === 'Asteroid - (Small)') {
+      //   smallPrice.style.display = 'block';
+      //   mediumPrice.style.display = 'none';
+      //   largePrice.style.display = 'none';
+      // } else if (selectedSize === 'Sun - (Medium)') {
+      //   smallPrice.style.display = 'none';
+      //   mediumPrice.style.display = 'block';
+      //   largePrice.style.display = 'none';
+      // } else {
+      //   smallPrice.style.display = 'none';
+      //   mediumPrice.style.display = 'none';
+      //   largePrice.style.display = 'block';
+      // }
 
       const sizes = Array.from(pizzaData[pizzaIndex].sizes);
       sizes.forEach((size) => {

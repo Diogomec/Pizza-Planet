@@ -136,7 +136,13 @@ function updateCartTotal() {
 }
 
 function getCartFromLocalStorage() {
-  return JSON.parse(localStorage.getItem("Pizza")) || "";
+  const cartData = localStorage.getItem("Pizza");
+  try {
+    return cartData ? JSON.parse(cartData) : "";
+  } catch (error) {
+    console.error("Error parsing cart data:", error);
+    return "";
+  }
 }
 
 function saveCartToLocalStorage() {

@@ -6,11 +6,6 @@ const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
 const User = require('../models/User.model');
 const Pizza = require('../models/Pizza.model');
 
-/* GET Profile page */
-router.get("/profile", isLoggedIn, (req, res, next) => {
-  res.render("admin/profile", { userInSession: req.session.currentUser});
-});
-
 /* GET Create-A-Pizza page */
 router.get("/create-a-pizza", isLoggedIn, (req, res, next) => {
     res.render("admin/create-a-pizza", { userInSession: req.session.currentUser});
@@ -71,6 +66,7 @@ router.get('/menu/:pizzaId', isLoggedIn, async (req, res) => {
  const { pizzaId } = req.params;
  const pizza = await Pizza.findById(pizzaId)
  const userInSession = req.session.currentUser;
+ console.log(pizza)
  const data = {pizza, userInSession};
  res.render('admin/details', { data })
 } catch (error) {

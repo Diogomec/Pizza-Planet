@@ -57,7 +57,7 @@ router.post('/login', (req, res, next) => {
             res.redirect('/users/profile');
         } else {
           req.session.currentUser = user;
-          res.redirect('/admin/profile');
+          res.redirect('/admin/menu');
         }
       } else {
         res.render('auth/login', { errorMessage: 'Incorrect password.' });

@@ -1,6 +1,6 @@
 {{> admin }}
 
-<div class="card-collection">
+<div class="card-collection" style="margin-top: 80px">
   {{#each data.pizzas}}
  <div class="card-container">
     <div class="card-elements">
@@ -8,7 +8,7 @@
         <div class="card-img">
           <img src="../{{imageUrl}}" alt="{{name}}">
         </div>
-      <div class="card-elements">
+      <div class="card-elements card-buttons">
         <p>{{igredients}}</p>
         <button><a href="/admin/menu/{{_id}}">See more</a></button>
       </div>

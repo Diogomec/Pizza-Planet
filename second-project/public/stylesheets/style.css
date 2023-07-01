@@ -59,6 +59,10 @@ nav > ul > li > a:hover {
 
 }
 
+.li-center {
+  margin-right: 300px;
+}
+
 
 
 /* ----------Forms---------- */
@@ -226,35 +230,6 @@ footer {
 }
 
 
-
-.profile-container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  color: white;
-  background-color: transparent;
-}
-
-img.profile-picture {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-.profile-details {
-  margin-bottom: 20px;
-}
-
-.profile-details h2 {
-  margin-top: 0;
-}
-
-.profile-details p {
-  margin: 0;
-}
-
-.profile-bio {
-  line-height: 1.5;
+.pizza-size {
+  margin-top: 20px;
 }

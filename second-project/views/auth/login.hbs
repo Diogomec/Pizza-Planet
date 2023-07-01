@@ -3,10 +3,23 @@
 <div class="container">
   <form action="/auth/login" method="post">
     <label for="email">Email: </label>
-    <input type="text" name="email" id="emai" placeholder="Tony">
+    <input type="text" name="email"  placeholder="Tony">
     <label for="Password">Password: </label>
-    <input type="password" name="password" id="password" placeholder="******">
+    <input type="password" name="password" placeholder="******">
     <button type="submit">Login</button>
+      <div style="background-color: rgba(255, 255, 255, 0.6);;">
+        <select name="userType" id="userTypeSelect" onchange="showHideParagraphs()">
+          <option value="role">---Choose a Role---</option>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+       </select>
+        <p id="userDetails" style="display: none;"></p>
+        <p id="userParagraph" style="display: none;">User: user@pizzaplanet.com</p>
+        <p id="userPasswordParagraph" style="display: none;">password : test1234</p>
+        <p id="adminDetails" style="display: none;"></p>
+        <p id="adminParagraph" style="display: none;">User: admin@pizzaplanet.com</p>
+        <p id="adminPasswordParagraph" style="display: none;">password : test1234</p>
+        	</div>
     <p class="white-links">Don't have an account? <a href="/auth/signup">Register here</a></p>
     {{#if errorMessage}}
       <p>{{errorMessage}}</p>

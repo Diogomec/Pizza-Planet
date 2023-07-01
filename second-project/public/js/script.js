@@ -18,19 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     selector.addEventListener('change', () => {
       const selectedSize = selector.value;
 
-      // if (selectedSize === 'Asteroid - (Small)') {
-      //   smallPrice.style.display = 'block';
-      //   mediumPrice.style.display = 'none';
-      //   largePrice.style.display = 'none';
-      // } else if (selectedSize === 'Sun - (Medium)') {
-      //   smallPrice.style.display = 'none';
-      //   mediumPrice.style.display = 'block';
-      //   largePrice.style.display = 'none';
-      // } else {
-      //   smallPrice.style.display = 'none';
-      //   mediumPrice.style.display = 'none';
-      //   largePrice.style.display = 'block';
-      // }
+      if (selectedSize === 'Asteroid - (Small)') {
+        smallPrice.style.display = 'block';
+        mediumPrice.style.display = 'none';
+        largePrice.style.display = 'none';
+      } else if (selectedSize === 'Sun - (Medium)') {
+        smallPrice.style.display = 'none';
+        mediumPrice.style.display = 'block';
+        largePrice.style.display = 'none';
+      } else {
+        smallPrice.style.display = 'none';
+        mediumPrice.style.display = 'none';
+        largePrice.style.display = 'block';
+      }
 
       const sizes = Array.from(pizzaData[pizzaIndex].sizes);
       sizes.forEach((size) => {
@@ -52,3 +52,41 @@ document.addEventListener("DOMContentLoaded", () => {
     pizzaCursor.style.left = (mouseX - 20) + 'px';
     pizzaCursor.style.top = (mouseY - 20) + 'px';
   });
+
+
+  function showHideParagraphs() {
+    let selectElement = document.getElementById("userTypeSelect");
+    let selectedValue = selectElement.options[selectElement.selectedIndex].value;
+    
+    let userDetails = document.getElementById("userDetails");
+    let userParagraph = document.getElementById("userParagraph");
+    let userPasswordParagraph = document.getElementById("userPasswordParagraph");
+
+    let adminDetails = document.getElementById("adminDetails");
+    let adminParagraph = document.getElementById("adminParagraph");
+    let adminPasswordParagraph = document.getElementById("adminPasswordParagraph");
+    
+    if (selectedValue === "user") {
+
+      adminDetails.style.display = "none";
+      adminParagraph.style.display = "none";
+      adminPasswordParagraph.style.display = "none";
+
+      userDetails.style.display = "block";
+      userParagraph.style.display = "block";
+      userPasswordParagraph.style.display = "block";
+
+      
+
+    } else if (selectedValue === "admin") {
+      adminDetails.style.display = "block";
+      adminParagraph.style.display = "block";
+      adminPasswordParagraph.style.display = "block";
+
+      userDetails.style.display = "none";
+      userParagraph.style.display = "none";
+      userPasswordParagraph.style.display = "none";
+
+      
+    }
+  }

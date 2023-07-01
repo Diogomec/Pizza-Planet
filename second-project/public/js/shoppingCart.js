@@ -79,14 +79,15 @@ function quantityChanged(event) {
 function addToCartClicked (event){
   let button = event.target
   let shopItem = button.parentElement.parentElement
-  let title = shopItem.getElementsByClassName("shop-item-title")[0].innerText
-  let price = shopItem.getElementsByClassName("shop-item-price")[0].innerText
-  let imageSrc = shopItem.getElementsByClassName("shop-item-image")[0].src
+  let title = shopItem.getElementsByClassName("shop-item-title")[0].innerText;
+  let priceElement = shopItem.getElementsByClassName("shop-item-price")[0];
+  let price = parseFloat(priceElement.getElementsByClassName("price-value")[0].innerText);
+  let imageSrc = shopItem.getElementsByClassName("shop-item-image")[0].src;
   // console.log(title, price, imageSrc)
-  addItemToCart(title, price, imageSrc)
-  updateCartTotal()
+  addItemToCart(title, price, imageSrc);
+  updateCartTotal();
 
-  saveCartToLocalStorage()
+  saveCartToLocalStorage();
 
 }
 
@@ -120,19 +121,19 @@ function addItemToCart(title, price, imageSrc){
   }
 
 function updateCartTotal() {
-  let cartItemContainer = document.getElementsByClassName('cart-items')[0]
-  let cartRows = cartItemContainer.getElementsByClassName('cart-row')
+  let cartItemContainer = document.getElementsByClassName('cart-items')[0];
+  let cartRows = cartItemContainer.getElementsByClassName('cart-row');
   let total = 0
   for (let i = 0; i < cartRows.length; i++) {
-      let cartRow = cartRows[i]
-      let priceElement = cartRow.getElementsByClassName('cart-price')[0]
-      let quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-      let price = parseFloat(priceElement.innerText.replace('$', ''))
-      let quantity = quantityElement.value
-      total = total + (price * quantity)
+      let cartRow = cartRows[i];
+      let priceElement = cartRow.getElementsByClassName('cart-price')[0];
+      let quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0];
+      let price = parseFloat(priceElement.innerText.replace('€', ''));
+      let quantity = quantityElement.value;
+      total = total + (price * quantity);
   }
   total = Math.round(total * 100) / 100
-  document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+  document.getElementsByClassName('cart-total-price')[0].innerText = '€' + total
 }
 
 function getCartFromLocalStorage() {

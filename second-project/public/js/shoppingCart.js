@@ -15,13 +15,13 @@ button.onclick = function() {
 };
 
 function ready() {
-  let cartItems = document.getElementsByClassName('cart-items')[0];
 
-  // Retrieve cart data from localStorage
-  const cart = JSON.parse(localStorage.getItem('Pizza'));
+  let cartItems = document.getElementsByClassName('cart-items')[0]
+  const cart = getCartFromLocalStorage();
   if (cart !== null) {
     cartItems.innerHTML = cart;
   }
+  
 
   let removeCartItemButtons = document.getElementsByClassName('btn-danger');
   for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -53,16 +53,17 @@ function purchaseClicked() {
   while (cartItems.hasChildNodes()) {
     cartItems.removeChild(cartItems.firstChild);
   }
-  updateCartTotal();
+  updateCartTotal()
+
+  saveCartToLocalStorage()
 }
 
 function removeCartItem(event) {
-  let buttonClicked = event.target;
-  buttonClicked.parentElement.parentElement.remove();
-  updateCartTotal();
+  let buttonClicked = event.target
+  buttonClicked.parentElement.parentElement.remove()
+  updateCartTotal()
 
-  // Update cart data in localStorage
-  updateCartData();
+  saveCartToLocalStorage()
 }
 
 function quantityChanged(event) {
@@ -70,10 +71,9 @@ function quantityChanged(event) {
   if (isNaN(input.value) || input.value <= 0) {
     input.value = 1;
   }
-  updateCartTotal();
+  updateCartTotal()
 
-  // Update cart data in localStorage
-  updateCartData();
+  saveCartToLocalStorage()
 }
 
 function addToCartClicked(event) {
@@ -85,51 +85,40 @@ function addToCartClicked(event) {
   addItemToCart(title, price, imageSrc);
   updateCartTotal();
 
-  // Update cart data in localStorage
-  updateCartData();
+  saveCartToLocalStorage()
+
+  saveCartToLocalStorage()
+
 }
 
-function addItemToCart(title, price, imageSrc) {
-  let cartItems = document.getElementsByClassName('cart-items')[0];
-  let cartItemNames = cartItems.getElementsByClassName('cart-item-title');
-  for (let i = 0; i < cartItemNames.length; i++) {
-    if (cartItemNames[i].innerText == title) {
-      alert('This item is already added to the cart');
-      return;
-    }
-  }
+function addItemToCart(title, price, imageSrc){
 
-  let cartRowContents = `
-    <div class="cart-row">
+  let cartItems = document.getElementsByClassName('cart-items')[0]
+  let cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    for (let i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
+            alert('This item is already added to the cart')
+            return
+        }
+    }
+    let cartRow = document.createElement('div');
+    cartRow.classList.add('cart-row');
+    cartRow.innerHTML = `
       <span class="cart-item-title">${title}</span>
       <span class="cart-price">${price}</span>
       <div class="cart-quantity">
         <input type="number" value="1" class="cart-input cart-quantity-input">
         <button class="btn btn-danger" type="button">REMOVE</button>
       </div>
-    </div>
-  `;
-
-  const cart = localStorage.getItem('Pizza');
-  if (cart === null) {
-    localStorage.setItem('Pizza', JSON.stringify(cartRowContents));
-    cartItems.innerHTML = cartRowContents;
-  } else {
-    const existingCart = JSON.parse(localStorage.getItem('Pizza'));
-    localStorage.setItem(
-      'Pizza',
-      JSON.stringify(existingCart + cartRowContents)
-    );
-    cartItems.innerHTML = existingCart + cartRowContents;
+    `;
+  
+    cartItems.appendChild(cartRow);
+  
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem);
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
+  
+    updateCartTotal();
   }
-
-  let cartRow = cartItems.lastChild;
-  let removeButton = cartRow.querySelector('.btn-danger');
-  removeButton.addEventListener('click', removeCartItem);
-
-  let quantityInput = cartRow.querySelector('.cart-quantity-input');
-  quantityInput.addEventListener('change', quantityChanged);
-}
 
 function updateCartTotal() {
   let cartItemContainer = document.getElementsByClassName('cart-items')[0];
@@ -154,7 +143,12 @@ function updateCartTotal() {
   updateCartData();
 }
 
-function updateCartData() {
-  let cartItems = document.getElementsByClassName('cart-items')[0];
-  localStorage.setItem('Pizza', cartItems.innerHTML);
+function getCartFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("Pizza")) || "";
+}
+
+function saveCartToLocalStorage() {
+  const cartItems = document.getElementsByClassName("cart-items")[0];
+  const cartContent = cartItems.innerHTML;
+  localStorage.setItem("Pizza", JSON.stringify(cartContent));
 }

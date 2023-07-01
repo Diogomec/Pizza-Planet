@@ -1,16 +1,18 @@
 {{> admin }}
 
-<div class="card-collection">
+<div class="card-collection" style="margin-top: 80px">
   <div class="card-container">
     <div class="card-elements">
       <h5>{{data.pizza.name}}</h5>
         <div class="card-img">
-          <img src="./{{data.pizza.imageUrl}}" alt="Pizza">
+          <img src="/{{data.pizza.imageUrl}}" alt="Pizza">
         </div>
       <p>{{data.pizza.ingredients}}</p>
+      <div class="card-buttons">
       <button><a href="/admin/menu/{{data.pizza._id}}/edit-a-pizza">Update</a></button>
       <form action="/admin/menu/{{data.pizza._id}}/delete-a-pizza" method="POST">
         <button>Delete</button>
+        </div>
       </form>
     </div>
   </div>

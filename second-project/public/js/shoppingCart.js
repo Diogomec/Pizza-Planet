@@ -76,19 +76,42 @@ function quantityChanged(event) {
   saveCartToLocalStorage()
 }
 
-function addToCartClicked (event){
-  let button = event.target
-  let shopItem = button.parentElement.parentElement
+function addToCartClicked(event) {
+  let button = event.target;
+  let shopItem = button.parentElement.parentElement;
   let title = shopItem.getElementsByClassName("shop-item-title")[0].innerText;
-  let priceElement = shopItem.getElementsByClassName("shop-item-price")[0];
-  let price = parseFloat(priceElement.getElementsByClassName("price-value")[0].innerText);
+
+  let selectedSize = "";
+  let sizeSelectors = shopItem.getElementsByClassName("pizza-size");
+  for (let i = 0; i < sizeSelectors.length; i++) {
+    if (sizeSelectors[i].value === "Asteroid - (Small)") {
+      selectedSize = "small";
+      break;
+    } else if (sizeSelectors[i].value === "Sun - (Medium)") {
+      selectedSize = "medium";
+      break;
+    } else if (sizeSelectors[i].value === "Galaxy - (Large)") {
+      selectedSize = "large";
+      break;
+    }
+  }
+  let price = 0;
+  if (selectedSize === "small") {
+    let smallPriceElement = shopItem.getElementsByClassName("small-price")[0];
+    price = parseFloat(smallPriceElement.getElementsByClassName("price-value")[0].innerText);
+  } else if (selectedSize === "medium") {
+    let mediumPriceElement = shopItem.getElementsByClassName("medium-price")[0];
+    price = parseFloat(mediumPriceElement.getElementsByClassName("price-value")[0].innerText);
+  } else if (selectedSize === "large") {
+    let largePriceElement = shopItem.getElementsByClassName("large-price")[0];
+    price = parseFloat(largePriceElement.getElementsByClassName("price-value")[0].innerText);
+  }
+
   let imageSrc = shopItem.getElementsByClassName("shop-item-image")[0].src;
-  // console.log(title, price, imageSrc)
+  
   addItemToCart(title, price, imageSrc);
   updateCartTotal();
-
   saveCartToLocalStorage();
-
 }
 
 function addItemToCart(title, price, imageSrc){

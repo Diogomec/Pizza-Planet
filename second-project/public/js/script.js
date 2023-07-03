@@ -104,29 +104,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // Slideshow
 
   const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-
-function showSlide(slideIndex) {
-  slides.forEach((slide) => slide.classList.remove('active'));
-  slides[slideIndex].classList.add('active');
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
-
-setInterval(nextSlide, 4000);
+  let currentSlide = 0;
+  
+  function showSlide(slideIndex) {
+    if (slideIndex >= 0 && slideIndex < slides.length) {
+      slides.forEach((slide) => slide.classList.remove('active'));
+      slides[slideIndex].classList.add('active');
+      currentSlide = slideIndex;
+    }
+  }
+  
+  function nextSlide() {
+    const nextSlideIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextSlideIndex);
+  }
+  
+  setInterval(nextSlide, 4000);
 
 // Add click event listeners to the images
 slides.forEach((slide, index) => {
   slide.addEventListener('click', () => {
-    if (index === 0) {
+    if (index === 0 || index === 1 || index === 2) {
       window.location.href = '/menu';
-    } else if (index === 1) {
-      window.location.href = '/menu/64a12222ffbfd9844721d122';
-    } else if (index === 2) {
-      window.location.href = '/auth/sign-up';
     }
   });
 });

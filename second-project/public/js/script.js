@@ -100,3 +100,32 @@ document.addEventListener("DOMContentLoaded", () => {
       
     }
   }
+
+  // Slideshow
+
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  
+  function showSlide(slideIndex) {
+    if (slideIndex >= 0 && slideIndex < slides.length) {
+      slides.forEach((slide) => slide.classList.remove('active'));
+      slides[slideIndex].classList.add('active');
+      currentSlide = slideIndex;
+    }
+  }
+  
+  function nextSlide() {
+    const nextSlideIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextSlideIndex);
+  }
+  
+  setInterval(nextSlide, 4000);
+
+// Add click event listeners to the images
+slides.forEach((slide, index) => {
+  slide.addEventListener('click', () => {
+    if (index === 0 || index === 1 || index === 2) {
+      window.location.href = '/menu';
+    }
+  });
+});

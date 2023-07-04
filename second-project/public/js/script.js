@@ -68,36 +68,36 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectElement = document.getElementById("userTypeSelect");
     let selectedValue = selectElement.options[selectElement.selectedIndex].value;
     
-    let userDetails = document.getElementById("userDetails");
     let userParagraph = document.getElementById("userParagraph");
     let userPasswordParagraph = document.getElementById("userPasswordParagraph");
 
-    let adminDetails = document.getElementById("adminDetails");
     let adminParagraph = document.getElementById("adminParagraph");
     let adminPasswordParagraph = document.getElementById("adminPasswordParagraph");
     
     if (selectedValue === "user") {
 
-      adminDetails.style.display = "none";
       adminParagraph.style.display = "none";
       adminPasswordParagraph.style.display = "none";
 
-      userDetails.style.display = "block";
       userParagraph.style.display = "block";
       userPasswordParagraph.style.display = "block";
 
       
 
     } else if (selectedValue === "admin") {
-      adminDetails.style.display = "block";
       adminParagraph.style.display = "block";
       adminPasswordParagraph.style.display = "block";
 
-      userDetails.style.display = "none";
       userParagraph.style.display = "none";
       userPasswordParagraph.style.display = "none";
 
       
+    } else {
+      adminParagraph.style.display = "none";
+      adminPasswordParagraph.style.display = "none";
+
+      userParagraph.style.display = "none";
+      userPasswordParagraph.style.display = "none";
     }
   }
 

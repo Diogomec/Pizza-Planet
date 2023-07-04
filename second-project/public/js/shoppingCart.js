@@ -127,9 +127,9 @@ function addItemToCart(title, price, imageSrc){
     let cartRow = document.createElement('div');
     cartRow.classList.add('cart-row');
     cartRow.innerHTML = `
-      <span class="cart-item-title">${title}</span>
-      <span class="cart-price">${price}</span>
-      <div class="cart-quantity">
+      <span class="cart-item-title cart-fields">${title}</span>
+      <span class="cart-price cart-fields">${price}</span>
+      <div class="cart-quantity cart-fields">
         <input type="number" value="1" class="cart-input cart-quantity-input">
         <button class="btn btn-danger" type="button">REMOVE</button>
       </div>

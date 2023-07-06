@@ -45,14 +45,19 @@ function ready() {
 }
 
 function purchaseClicked() {
-  localStorage.removeItem("Pizza")
-  console.log(localStorage.Pizza)
-  let cartItems = document.getElementsByClassName('cart-items')[0]
+  localStorage.removeItem("Pizza");
+  const cartItems = document.getElementsByClassName('cart-items')[0];
+  const orderData = cartItems.innerHTML;
+  localStorage.setItem('OrderData', orderData);
+  alert('Thank you for your purchase');
+  
   while (cartItems.hasChildNodes()) {
-  cartItems.removeChild(cartItems.firstChild)
+    cartItems.removeChild(cartItems.firstChild);
   }
-  updateCartTotal()
-  saveCartToLocalStorage()
+  updateCartTotal();
+  saveCartToLocalStorage();
+  
+  window.location.href = "/users/my-orders?orderData=" + encodeURIComponent(orderData);
 }
 
 function removeCartItem(event) {

@@ -7,7 +7,8 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
 });
 
 router.get("/my-orders", isLoggedIn, (req, res, next) => {
-  res.render("users/my-orders",  { userInSession: req.session.currentUser});
+  const orderData = req.query.orderData;
+  res.render("users/my-orders", { orderData: orderData, userInSession: req.session.currentUser });
 });
 
 router.get("/my-favourites", isLoggedIn, (req, res, next) => {

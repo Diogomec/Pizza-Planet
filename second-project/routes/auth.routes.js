@@ -21,14 +21,14 @@ router.post('/signup', isLoggedOut, (req, res, next) => {
                 username,
                 passwordHash: hashedPassword,
                 email,
-            })
-            .then(() => {
+            });
+        })
+        .then(userFromDB => {
                 res.redirect('/users/profile');
             })
             .catch((error) => {
                 console.error(error);
                 res.redirect("/error");
-            });
         })
         .catch(error => next(error));
 });

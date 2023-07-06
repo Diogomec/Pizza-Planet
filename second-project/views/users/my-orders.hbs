@@ -1,10 +1,12 @@
-
 {{> public }}
-   
+
 {{#if userInSession}}
+  <h1>My Orders</h1>
+  <div class="cart-items">
+    {{{orderData}}}
+  </div>
 
 {{else}}
   <br>
   <p>Still no logged in user, sorry!</p>
 {{/if}}
-

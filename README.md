@@ -2,11 +2,33 @@
 
 This is a full-stack e-commerce website for selling and delivering pizzas. The project was developed by Diogo and Bernard.
 
+## Features
+
+ - User authentication and registration
+ - Responsive layout for different screen sizes
+ - Database integration and data persistence
+ - Front-end views and components
+ - CRUD operations for managing data
+ - Error handling and validation
+ - Security measures (e.g., authentication)
+ - Deployment instructions
+
 ## Technologies Used
 
-- Backend: Node.js
-- Templating Engine: Handlebars
-- Database: MongoDB
+Front-end:
+
+ - HTML/CSS
+ - JavaScript
+ - CSS framework (Bootstrap)
+
+ - Templating Engine: Handlebars
+ 
+ Back-end:
+
+ - Server-side language (Node.js)
+ - Framework (Express)
+ - Database (MongoDB)
+ - Authentication/Authorization library (Bcrypt.js)
 
 ## Deployment
 
@@ -28,6 +50,12 @@ npm install
 
 4. Start the application:
 npm start
+
+## Description
+
+Welcome to Pizza Planet, your one-stop celestial destination for delectable pizzas and seamless pizza delivery. Inspired by the vastness of space, Pizza Planet combines the love for pizzas with the wonders of the cosmos, creating a captivating full stack website that will take your taste buds on an interstellar journey.
+
+Experience the perfect fusion of heavenly flavors and cosmic ambiance at Pizza Planet. Let us take you on a celestial culinary adventure that will leave you craving more. Prepare to be mesmerized by our stellar pizzas and exceptional pizza delivery service.
 
 ## Contributing
 

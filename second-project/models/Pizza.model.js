@@ -20,6 +20,7 @@ const pizzaSchema = new Schema(
         price: Number
       }
     ],
+    description: String,
     price: Number,
   },
   {   

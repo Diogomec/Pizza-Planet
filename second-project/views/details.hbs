@@ -1,8 +1,8 @@
 {{#if data.userInSession}}
 <nav>
     <ul>
-        <li class="icon-li">
-         <a href="/" ><img src="/images/pizza-planet.png" alt="" width="50" height="50"><h3>Pizza Planet</h3></a>  
+        <li>
+         <a href="/" class="icon-li"><img src="/images/pizza-planet.png" alt="" width="50" height="50"><h3>Pizza Planet</h3></a>  
         </li>
         <li>
             <a href="/menu">Menu |</a>
@@ -67,6 +67,7 @@
           Price: <span class="price-value">{{data.pizza.sizes.[2].price}}</span> <span class="currency">€</span>
         </p>
       <p>{{data.pizza.ingredients}}</p>
+      <p>{{data.pizza.description}}</p>
       <p class="shop-item-price">{{data.pizza.price}}</p>
       <button class="order-button">Order</button>
     </div>
@@ -74,3 +75,5 @@
     </div>
   
 {{> shoppingCart }}
+
+

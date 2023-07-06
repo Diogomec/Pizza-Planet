@@ -15,13 +15,14 @@
   };
 
   const isLoggedInAndAdmin = (req, res, next) => {
-    if (req.session.currentUser && req.session.currentUser.role === 'Admin' ) {
-      return res.redirect('/auth/login');
+    if (req.session.currentUser.role === 'Admin' ) {
+      return res.redirect('/');
     }
     next();
   };
    
   module.exports = {
     isLoggedIn,
-    isLoggedOut
+    isLoggedOut,
+    isLoggedInAndAdmin
   };

@@ -33,8 +33,7 @@ app.locals.appTitle = projectName;
 // Importing the Models
 const User = require('./models/User.model');
 const Pizza = require('./models/Pizza.model');
-const Order = require('./models/Order.model');
-const Review = require('./models/Review.model');
+
 
 // All pizzas
 const seedAllPizzas = require("./seeds/pizza.seed");

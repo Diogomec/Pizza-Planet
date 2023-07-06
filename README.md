@@ -53,7 +53,9 @@ npm start
 
 ## Description
 
-Our project is a full-satck website
+Welcome to Pizza Planet, your one-stop celestial destination for delectable pizzas and seamless pizza delivery. Inspired by the vastness of space, Pizza Planet combines the love for pizzas with the wonders of the cosmos, creating a captivating full stack website that will take your taste buds on an interstellar journey.
+
+Experience the perfect fusion of heavenly flavors and cosmic ambiance at Pizza Planet. Let us take you on a celestial culinary adventure that will leave you craving more. Prepare to be mesmerized by our stellar pizzas and exceptional pizza delivery service.
 
 ## Contributing
 

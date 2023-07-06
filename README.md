@@ -17,18 +17,18 @@ This is a full-stack e-commerce website for selling and delivering pizzas. The p
 
 Front-end:
 
- HTML/CSS
- JavaScript
- CSS framework (Bootstrap)
+ - HTML/CSS
+ - JavaScript
+ - CSS framework (Bootstrap)
 
- Templating Engine: Handlebars
+ - Templating Engine: Handlebars
  
-Back-end:
+ Back-end:
 
- Server-side language (Node.js)
- Framework (Express)
- Database (MongoDB)
- Authentication/Authorization library (Bcrypt.js)
+ - Server-side language (Node.js)
+ - Framework (Express)
+ - Database (MongoDB)
+ - Authentication/Authorization library (Bcrypt.js)
 
 ## Deployment
 

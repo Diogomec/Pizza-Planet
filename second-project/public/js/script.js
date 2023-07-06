@@ -47,23 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
           size.selected = false;
         }
       });
-
       updateCartTotal();
       saveCartToLocalStorage();
     });
   });
 });
 
-  document.addEventListener('mousemove', function(event) {
-    var mouseX = event.clientX;
-    var mouseY = event.clientY;
-  
-    var pizzaCursor = document.getElementById('pizza-cursor');
-    pizzaCursor.style.left = (mouseX - 20) + 'px';
-    pizzaCursor.style.top = (mouseY - 20) + 'px';
-  });
-
-
+  // Show/Hide Login Information
   function showHideParagraphs() {
     let selectElement = document.getElementById("userTypeSelect");
     let selectedValue = selectElement.options[selectElement.selectedIndex].value;
@@ -75,34 +65,24 @@ document.addEventListener("DOMContentLoaded", () => {
     let adminPasswordParagraph = document.getElementById("adminPasswordParagraph");
     
     if (selectedValue === "user") {
-
       adminParagraph.style.display = "none";
       adminPasswordParagraph.style.display = "none";
-
       userParagraph.style.display = "block";
       userPasswordParagraph.style.display = "block";
-
-      
-
     } else if (selectedValue === "admin") {
       adminParagraph.style.display = "block";
       adminPasswordParagraph.style.display = "block";
-
       userParagraph.style.display = "none";
-      userPasswordParagraph.style.display = "none";
-
-      
+      userPasswordParagraph.style.display = "none"
     } else {
       adminParagraph.style.display = "none";
       adminPasswordParagraph.style.display = "none";
-
       userParagraph.style.display = "none";
       userPasswordParagraph.style.display = "none";
     }
   }
 
   // Slideshow
-
   const slides = document.querySelectorAll('.slide');
   let currentSlide = 0;
   
@@ -118,8 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextSlideIndex = (currentSlide + 1) % slides.length;
     showSlide(nextSlideIndex);
   }
-  
-  setInterval(nextSlide, 4000);
+  setInterval(nextSlide, 1500);
 
 // Add click event listeners to the images
 slides.forEach((slide, index) => {
@@ -128,4 +107,14 @@ slides.forEach((slide, index) => {
       window.location.href = '/menu';
     }
   });
+});
+
+// Pizza Cursor
+document.addEventListener('mousemove', (event) => {
+  let mouseX = event.clientX;
+  let mouseY = event.clientY;
+
+  let pizzaCursor = document.getElementById('pizza-cursor');
+  pizzaCursor.style.left = (mouseX - 20) + 'px';
+  pizzaCursor.style.top = (mouseY - 20) + 'px';
 });

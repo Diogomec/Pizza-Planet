@@ -1,4 +1,4 @@
-const isLoggedIn = (req, res, next) => {
+  const isLoggedIn = (req, res, next) => {
     if (!req.session.currentUser) {
       return res.redirect('/auth/login');
     }
@@ -10,6 +10,13 @@ const isLoggedIn = (req, res, next) => {
   const isLoggedOut = (req, res, next) => {
     if (req.session.currentUser) {
       return res.redirect('/');
+    }
+    next();
+  };
+
+  const isLoggedInAndAdmin = (req, res, next) => {
+    if (req.session.currentUser && req.session.currentUser.role === 'Admin' ) {
+      return res.redirect('/auth/login');
     }
     next();
   };

@@ -15,7 +15,6 @@ button.onclick = function() {
   }
 };
 
-
 function ready() {
 
   let cartItems = document.getElementsByClassName('cart-items')[0]
@@ -24,37 +23,35 @@ function ready() {
     cartItems.innerHTML = cart;
   }
   
-
   let removeCartItemButtons = document.getElementsByClassName('btn-danger')
-    for (var i = 0; i < removeCartItemButtons.length; i++) {
+    for (let i = 0; i < removeCartItemButtons.length; i++) {
         let button = removeCartItemButtons[i]
         button.addEventListener('click', removeCartItem)
     }
 
     let quantityInputs = document.getElementsByClassName('cart-quantity-input')
-    for (var i = 0; i < quantityInputs.length; i++) {
+    for (let i = 0; i < quantityInputs.length; i++) {
         let input = quantityInputs[i]
         input.addEventListener('change', quantityChanged)
     }
 
-let addToCartButtons = document.getElementsByClassName("order-button")
-for (let i = 0; i < addToCartButtons.length; i++) {
-  let button = addToCartButtons[i]
-  button.addEventListener("click", addToCartClicked)
-}
-document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+    let addToCartButtons = document.getElementsByClassName("order-button")
+    for (let i = 0; i < addToCartButtons.length; i++) {
+        let button = addToCartButtons[i]
+        button.addEventListener("click", addToCartClicked)
+    }
+  document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 
 }
 
 function purchaseClicked() {
   localStorage.removeItem("Pizza")
-  alert('Thank you for your purchase')
-  var cartItems = document.getElementsByClassName('cart-items')[0]
+  console.log(localStorage.Pizza)
+  let cartItems = document.getElementsByClassName('cart-items')[0]
   while (cartItems.hasChildNodes()) {
-      cartItems.removeChild(cartItems.firstChild)
+  cartItems.removeChild(cartItems.firstChild)
   }
   updateCartTotal()
-
   saveCartToLocalStorage()
 }
 
@@ -62,17 +59,15 @@ function removeCartItem(event) {
   let buttonClicked = event.target
   buttonClicked.parentElement.parentElement.remove()
   updateCartTotal()
-
   saveCartToLocalStorage()
 }
 
 function quantityChanged(event) {
-  var input = event.target
+  let input = event.target
   if (isNaN(input.value) || input.value <= 0) {
       input.value = 1
   }
   updateCartTotal()
-
   saveCartToLocalStorage()
 }
 
@@ -80,7 +75,6 @@ function addToCartClicked(event) {
   let button = event.target;
   let shopItem = button.parentElement.parentElement;
   let title = shopItem.getElementsByClassName("shop-item-title")[0].innerText;
-
   let selectedSize = "";
   let sizeSelectors = shopItem.getElementsByClassName("pizza-size");
   for (let i = 0; i < sizeSelectors.length; i++) {
@@ -106,16 +100,12 @@ function addToCartClicked(event) {
     let largePriceElement = shopItem.getElementsByClassName("large-price")[0];
     price = parseFloat(largePriceElement.getElementsByClassName("price-value")[0].innerText);
   }
-
-  let imageSrc = shopItem.getElementsByClassName("shop-item-image")[0].src;
-  
-  addItemToCart(title, price, imageSrc);
+  addItemToCart(title, price);
   updateCartTotal();
   saveCartToLocalStorage();
 }
 
-function addItemToCart(title, price, imageSrc){
-
+function addItemToCart(title, price){
   let cartItems = document.getElementsByClassName('cart-items')[0]
   let cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     for (let i = 0; i < cartItemNames.length; i++) {
@@ -128,15 +118,13 @@ function addItemToCart(title, price, imageSrc){
     cartRow.classList.add('cart-row');
     cartRow.innerHTML = `
       <span class="cart-item-title cart-fields">${title}</span>
-      <span class="cart-price cart-fields">${price}</span>
+      <span class="cart-price cart-fields">${price}<span>€</span></span>
       <div class="cart-quantity cart-fields">
         <input type="number" value="1" class="cart-input cart-quantity-input">
         <button class="btn btn-danger" type="button">REMOVE</button>
-      </div>
-    `;
+      </div>`;
   
     cartItems.appendChild(cartRow);
-  
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem);
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
   
@@ -174,3 +162,4 @@ function saveCartToLocalStorage() {
   const cartContent = cartItems.innerHTML;
   localStorage.setItem("Pizza", JSON.stringify(cartContent));
 }
+

@@ -5,17 +5,12 @@ const saltRounds = 10;
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
 const User = require('../models/User.model');
 
-// Import the Mailgun client and setup code
-const formData = require('form-data');
-const Mailgun = require('mailgun.js');
-const mailgun = new Mailgun(formData);
-
 
 router.get("/signup", isLoggedOut, (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post('/signup', (req, res, next) => {
+router.post('/signup', isLoggedOut, (req, res, next) => {
     const { username, email, password } = req.body;
 
     bcryptjs
@@ -26,15 +21,6 @@ router.post('/signup', (req, res, next) => {
                 username,
                 passwordHash: hashedPassword,
                 email,
-            });
-        })
-        .then(userFromDB => {
-            mg.messages.create('sandboxc1883ad666f2480e867312386d247e45.mailgun.org', {
-                from: "Excited User <mailgun@sandboxc1883ad666f2480e867312386d247e45.mailgun.org>",
-                to: [userFromDB.email],
-                subject: "Welcome to Pizza Planet",
-                text: "Thank you for signing up to Pizza Planet! Use this Promo Code in your first order #PP2023 and gain 10% of discount",
-                html: "<p>Thank you for signing up to Pizza Planet! Use this Promo Code in your first order #PP2023 and gain 10% of discount</p>"
             })
             .then(() => {
                 res.redirect('/users/profile');
@@ -51,18 +37,14 @@ router.get("/login", isLoggedOut, (req, res, next) => {
     res.render("auth/login");
   });
 
-router.post('/login', (req, res, next) => {
-
+router.post('/login', isLoggedOut, (req, res, next) => {
     const { email, password } = req.body;
-    // console.log('SESSION =====> ', req.session);
-   
     if (email === '' || password === '') {
       res.render('auth/login', {
         errorMessage: 'Please enter both, email and password to login.'
       });
       return;
     }
-   
     User.findOne({ email })
     .then(user => {
       if (!user) {
@@ -83,7 +65,7 @@ router.post('/login', (req, res, next) => {
     .catch(error => next(error));
 });
 
-router.post("/logout", (req, res) => {
+router.post("/logout", isLoggedIn, (req, res) => {
     req.session.destroy();
     res.redirect("/");
 });

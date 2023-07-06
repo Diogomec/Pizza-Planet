@@ -105,9 +105,8 @@ const allPizzas = [
 // Function to seed example pizzas
 const seedAllPizzas = async () => {
   try {
-    await Pizza.deleteMany(); // Clear existing pizzas
-    await Pizza.insertMany(allPizzas); // Insert example pizzas
-    console.log("Example pizzas seeded successfully.");
+    await Pizza.deleteMany(); 
+    await Pizza.insertMany(allPizzas);
   } catch (error) {
     console.error("Error seeding example pizzas:", error);
   }

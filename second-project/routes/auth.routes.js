@@ -53,6 +53,7 @@ router.post('/login', isLoggedOut, (req, res, next) => {
       } else if (bcryptjs.compareSync(password, user.passwordHash)) {
           if(user.role === 'User'){
             req.session.currentUser = user;
+            console.log(user)
             res.redirect('/users/profile');
         } else {
           req.session.currentUser = user;

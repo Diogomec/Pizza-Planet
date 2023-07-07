@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
-const { isLoggedInAndAdmin} = require('../middleware/route-guard.js');
+const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
 const User = require('../models/User.model');
 const Pizza = require('../models/Pizza.model');
 
 /* GET Create-A-Pizza page */
-router.get("/create-a-pizza", isLoggedInAndAdmin, (req, res, next) => {
+router.get("/create-a-pizza", isLoggedIn, (req, res, next) => {
     res.render("admin/create-a-pizza", { userInSession: req.session.currentUser});
 });
 
@@ -20,7 +20,7 @@ router.post("/create-a-pizza", async (req, res, next) => {
 });
 
 /* GET Create-A-User page */
-router.get("/create-a-user", isLoggedInAndAdmin, (req, res, next) => {
+router.get("/create-a-user", isLoggedIn, (req, res, next) => {
     res.render("admin/create-a-user", {userInSession: req.session.currentUser});
 });
 
@@ -46,12 +46,12 @@ router.post("/create-a-user", async (req, res, next) => {
   });
 
 /* GET Menu page */
-router.get("/menu", isLoggedInAndAdmin, async (req, res, next) => {
+router.get("/menu", isLoggedIn, async (req, res, next) => {
   try {
     const pizzas = await Pizza.find();
     const userInSession = req.session.currentUser;
     const data = {pizzas, userInSession};
-    console.log(userInSession)
+    // console.log(data)
     res.render("admin/menu", { data });
   } catch (error) {
       console.error('Error fetching pizzas:', error);
@@ -60,7 +60,7 @@ router.get("/menu", isLoggedInAndAdmin, async (req, res, next) => {
 });
 
 /* GET Details page */
-router.get('/menu/:pizzaId', isLoggedInAndAdmin, async (req, res) => {
+router.get('/menu/:pizzaId', isLoggedIn, async (req, res) => {
   try {
     
  const { pizzaId } = req.params;
@@ -75,7 +75,7 @@ router.get('/menu/:pizzaId', isLoggedInAndAdmin, async (req, res) => {
 }
 });
 
-router.get('/menu/:pizzaId/edit-a-pizza', isLoggedInAndAdmin, async (req, res, next) => {
+router.get('/menu/:pizzaId/edit-a-pizza', isLoggedIn, async (req, res, next) => {
   try {
 
   const { pizzaId } = req.params;

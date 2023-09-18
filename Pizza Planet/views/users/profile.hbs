@@ -1,0 +1,20 @@
+
+{{> public }}
+
+
+{{#if userInSession}}
+
+
+    <h1 class="profile-title">Profile Page</h1>
+    <div class="profile">
+    <p>Name: {{userInSession.username}}</p>
+    <p>Email: {{userInSession.email}}</p>
+  </div>
+
+{{else}}
+  <br>
+  <p>Still no logged in user, sorry!</p>
+{{/if}}
+
+
+{{> footer }}

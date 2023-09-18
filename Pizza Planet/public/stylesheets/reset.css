@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Turret Road';
+    src: url('../fonts/TurretRoad-Bold.ttf') format('truetype');
+  }
+
+* {
+    font-family: 'Turret Road', sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    box-sizing: border-box;
+}

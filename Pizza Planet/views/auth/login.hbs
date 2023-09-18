@@ -1,0 +1,29 @@
+{{> public }}
+
+<div class="container">
+  <form action="/auth/login" method="post">
+    <label for="email">Email: </label>
+    <input type="text" name="email"  placeholder="tony@pizzaplanet.com">
+    <label for="Password">Password: </label>
+    <input type="password" name="password" placeholder="******">
+    <button type="submit">Login</button>
+        {{!-- <select name="userType" id="userTypeSelect" onchange="showHideParagraphs()">
+          <option value="role">---Choose a Role---</option>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+       </select>
+        <div class="login-data">
+          <p id="userParagraph" style="display: none;">Email: user@pizzaplanet.com</p>
+          <p id="userPasswordParagraph" style="display: none;">Password : test1234</p>
+          <p id="adminDetails" style="display: none;"></p>
+          <p id="adminParagraph" style="display: none;">Email: admin@pizzaplanet.com</p>
+          <p id="adminPasswordParagraph" style="display: none;">Password : test1234</p>
+        </div> --}}
+    <p class="white-links">Don't have an account? <a href="/auth/signup">Register here</a></p>
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
+
+{{> footer }}

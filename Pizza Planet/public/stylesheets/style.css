@@ -1,0 +1,382 @@
+body {
+  background-image: url('../images/bg-universe.jpg');
+  min-height: 100vh;
+  cursor: none;
+}
+
+h1 {
+  color: white !important;
+  text-align: center;
+}
+
+a {
+  cursor: none;
+}
+
+img {
+  cursor: none;
+}
+
+/* ----------Background Animation---------- */
+
+.universe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.stars {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: url(../images/bg-universe.jpg) repeat;
+  animation: zoomInOut 20s infinite;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1.2);
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: scale(1);
+    transform: rotate(15deg);
+  }
+}
+
+
+/* ----------Nav Bar---------- */
+
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: rgba(255, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+
+
+}
+
+nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+nav > ul > li {
+ margin-top: 20px;
+
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: white
+}
+
+nav > ul > li > a:hover {
+  color: red;
+}
+
+.nav-button {
+  color: white;
+  background-color: transparent;
+  margin: 0 !important;
+}
+
+.nav-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.icon-li {
+  display: flex;
+  align-items:end;
+  gap: 15px;
+
+}
+
+.li-center {
+  margin-right: 300px;
+}
+
+/* ----------Slides---------- */
+
+.slideshow {
+  position: relative;
+  width: 700px;
+  height: 450px;
+  overflow: hidden;
+  margin: 150px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* ----------Forms---------- */
+
+.container {
+  width: 27% !important;
+  height: 35%;
+  background-color: rgba(255, 0, 0, 0.6);
+  margin-top: 5%;
+  border-radius: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  margin: 15px 0px;
+}
+
+
+input, select, option, textarea {
+  border-radius: 8px;
+  color: black;
+}
+
+
+.white-links > a {
+  text-decoration: none;
+  color: white;
+}
+
+.white-links > a:hover {
+  color: red;
+}
+
+
+
+/* ---------Pizza Card--------- */
+
+.menu-title{
+  margin: 40px;
+}
+
+.card-collection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+  margin-left: 140px;
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img > img {
+  width: 90%;
+  object-fit: cover;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+
+}
+
+.card-container {
+  max-width: 400px;
+  background-color: rgba(255, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.card-elements {
+  text-align: center;
+}
+
+.card-elements > p {
+  margin-top: 10px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card-buttons > button {
+  width: 30%;
+}
+
+
+.shop-item-title {
+  margin: 10px 0;
+}
+
+
+
+/* ---------Shooping Cart--------- */
+
+#shopping-cart-sidebar{
+  right:0;
+  top: 80px;
+  background-color: rgba(57, 17, 17, 0.5);
+  width: 30%;
+  max-height: 90%;
+  border-radius: 10px;
+  position: fixed;
+  display: none;
+  Overflow-y:scroll;
+
+}
+
+.main-cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-buttons > button > a {
+  text-decoration: none;
+  color: black;
+}
+
+.cart-fields {
+  width: 25%;
+  text-align: center;
+}
+
+.cart-fields > input {
+  width: 50%;
+
+}
+
+
+
+
+/* ----------Button---------- */
+
+button {
+  color: black;
+  border-color: transparent;
+  border-radius: 8px !important;
+  padding: 5px 20px;
+  margin: 20px 0 !important;
+}
+
+button:hover {
+  border-color: black;
+}
+
+.remove {
+  position: relative;
+  top: 0;
+  right: 0;
+  background-color: azure;
+  padding: 5px;
+}
+
+
+
+
+/* ----------Footer---------- */
+
+.footerAll {
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+
+.footer-menu {
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  color: white;
+  text-align: center;
+}
+
+.small-price, .medium-price, .large-price {
+  display: none;
+}
+
+
+
+/* ----------Cursor---------- */
+
+#pizza-cursor {
+  position: fixed;
+  pointer-events: none;
+  width: 70px;
+  height: 70px;
+  background-image: url('../images/cursor-pizza.png');
+  background-size: contain;
+  z-index: 9999;
+}
+
+
+.pizza-size {
+  margin-top: 20px;
+}
+
+
+.nostyle-a{
+  color: black;
+  
+}
+
+/* .login-data {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 10px 0;
+  padding: 0 10px;
+} */
+
+
+
+.profile-title {
+  margin-top: 60px;
+  text-align: center;
+}
+.profile {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}

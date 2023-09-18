@@ -1,0 +1,79 @@
+{{#if data.userInSession}}
+<nav>
+    <ul>
+        <li>
+         <a href="/" class="icon-li"><img src="/images/pizza-planet.png" alt="" width="50" height="50"><h3>Pizza Planet</h3></a>  
+        </li>
+        <li>
+            <a href="/menu">Menu |</a>
+            <a href="/users/profile">Profile |</a>
+            <a href="/users/my-orders">My Orders |</a>
+            <a href="/users/my-favourites">My Favourites |</a>
+            <a href="/users/create-my-pizza">Create My Pizza</a>
+        </li>
+        <li class="d-flex">
+            <form action="/auth/logout" method="post">
+             <button class="nav-button">Logout</button>
+            </form>
+             <button class="nav-button" id="buttonCart">Cart</button>
+       
+        </li>
+    </ul>
+</nav>
+{{else}}
+<nav>
+    <ul>
+        <li>
+            <a href="/" class="icon-li"><img src="/images/pizza-planet.png" alt="" width="50" height="50"><h3>Pizza Planet</h3></a>  
+        </li>
+        <li class="li-center" >
+            <a href="/menu">Menu |</a>
+            <a href="/auth/signup">Signup |</a>
+            <a href="/auth/login">Login</a>
+        </li>
+        <li>
+             <button class="nav-button" id="buttonCart">Cart</button>
+        </li>
+    </ul>
+</nav>
+{{/if}}
+
+
+<div class="card-collection" style="margin-top: 80px;">
+<div class="card-container shop-item">
+    <div class="card-elements">
+      <h5 class="shop-item-title">{{data.pizza.name}}</h5>
+        <div class="card-img">
+          <img src="../{{data.pizza.imageUrl}}" alt="Pizza" class="shop-item-image">
+        </div>
+
+        <select id="pizza-size-{{@index}}" class="pizza-size">
+          {{#each data.pizza.sizes}}
+            {{#if selected}}
+              <option value="{{name}}" selected>{{name}}</option>
+            {{else}}
+              <option value="{{name}}">{{name}}</option>
+            {{/if}}
+          {{/each}}
+        </select>
+
+        <p class="pizza-price small-price shop-item-price" {{#unless data.pizza.sizes.[0].selected}}style="display: none;"{{/unless}}>
+          Price: <span class="price-value">{{data.pizza.sizes.[0].price}}</span> <span class="currency">€</span>
+        </p>
+        <p class="pizza-price medium-price shop-item-price" {{#unless sizes.[1].selected}}style="display: none;"{{/unless}}>
+          Price: <span class="price-value">{{data.pizza.sizes.[1].price}}</span> <span class="currency">€</span>
+        </p>
+        <p class="pizza-price large-price shop-item-price" {{#unless sizes.[2].selected}}style="display: none;"{{/unless}}>
+          Price: <span class="price-value">{{data.pizza.sizes.[2].price}}</span> <span class="currency">€</span>
+        </p>
+      <p>{{data.pizza.ingredients}}</p>
+      <p>{{data.pizza.description}}</p>
+      <p class="shop-item-price">{{data.pizza.price}}</p>
+      <button class="order-button">Order</button>
+    </div>
+  </div>
+    </div>
+  
+{{> shoppingCart }}
+
+

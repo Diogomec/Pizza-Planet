@@ -1,0 +1,44 @@
+{{> admin }}
+
+<div class="container">
+<form action="/admin/menu/{{pizza._id}}/edit-a-pizza" method="post">
+        <label for="name">Image: </label>
+        <input type="file" name="image" accept="image/png, image/jpeg" value="{{pizza}}">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" value="{{pizza.name}}">
+        <label for="sauce">Sauce: </label>
+        <input type="text" name="sauce" id="sauce" value="{{pizza.sauce}}">
+        <label for="size">Choose a size:</label>
+        <select name="size" id="size">
+            <option value="">--Please choose an option--</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <label for="ingredient1">Ingredient 1:</label>
+        <select name="ingredient" id="ingredient1">
+            <option value="">--Please choose an option--</option>
+            <option value="Tomato">Tomato</option>
+            <option value="Ham">Ham</option>
+            <option value="Cheese">Cheese</option>
+        </select>
+        <label for="ingredient2">Ingredient 2:</label>
+        <select name="ingredient" id="ingredient2">
+            <option value="">--Please choose an option--</option>
+            <option value="Tomato">Tomato</option>
+            <option value="Ham">Ham</option>
+            <option value="Cheese">Cheese</option>
+        </select>
+        <label for="ingredient3">Ingredient 3:</label>
+        <select name="ingredient" id="ingredient3">
+            <option value="">--Please choose an option--</option>
+            <option value="Tomato">Tomato</option>
+            <option value="Ham">Ham</option>
+            <option value="Cheese">Cheese</option>
+        </select>
+        <label for="description">Description: </label>
+        <textarea name="description" id="description" cols="30" rows="3" >{{pizza.description}}</textarea>
+        <label for="price">Price: </label>
+        <input type="number" name="price" id="price" step="0.01" value="{{pizza.price}}">
+        <button type="submit">Save Changes</button>
+</div>

@@ -1,0 +1,19 @@
+{{> public }}
+
+<div class="container">
+  <form action="/auth/signup" method="post">
+    <label for="username">Username: </label>
+    <input type="text" name="username" placeholder="Tony">
+    <label for="email" >Email: </label>
+    <input type="email" name="email"  placeholder="tony@pizzaplanet.com">
+    <label for="password" >Password: </label>
+    <input type="password" name="password"  placeholder="******">
+    <button type="submit">Signup</button>
+    <p class="white-links">Already have an account? <a href="/auth/login">Login now!</a></p>
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
+
+{{> footer }}

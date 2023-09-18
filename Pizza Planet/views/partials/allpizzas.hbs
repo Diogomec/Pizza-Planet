@@ -1,0 +1,42 @@
+<h1 class="menu-title">Choose your Pizzas here!</h1>
+ 
+ <div class="card-collection">
+  {{#each data.pizzas}}
+  <div class="card-container shop-item">
+    <div class="card-elements">
+      <h5 class="shop-item-title">{{name}}</h5>
+        <div class="card-img">
+          <img src="{{imageUrl}}" alt="Pizza" class="shop-item-image">
+        </div>
+
+      <select id="pizza-size-{{@index}}" class="pizza-size">
+          {{#each sizes}}
+            {{#if selected}}
+              <option value="{{name}}" selected>{{name}}</option>
+            {{else}}
+              <option value="{{name}}">{{name}}</option>
+            {{/if}}
+          {{/each}}
+        </select>
+
+        <p class="pizza-price small-price shop-item-price" {{#unless sizes.[0].selected}}style="display: none;"{{/unless}}>
+          Price: <span class="price-value">{{sizes.[0].price}}</span> <span class="currency">€</span>
+        </p>
+        <p class="pizza-price medium-price shop-item-price" {{#unless sizes.[1].selected}}style="display: none;"{{/unless}}>
+          Price: <span class="price-value">{{sizes.[1].price}}</span> <span class="currency">€</span>
+        </p>
+        <p class="pizza-price large-price shop-item-price" {{#unless sizes.[2].selected}}style="display: none;"{{/unless}}>
+          Price: <span class="price-value">{{sizes.[2].price}}</span> <span class="currency">€</span>
+        </p>
+
+
+      <p>{{ingredients}}</p>
+      <p class="shop-item-price">{{price}}</p>
+        <div class="card-buttons">
+          <button><a href="menu/{{_id}}">More Info</a></button>
+          <button class="order-button">Order</button>
+        </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

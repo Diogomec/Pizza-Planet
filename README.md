@@ -39,14 +39,14 @@ The application is deployed using Cyclic, a hosting or deployment service.
 To get a local copy of the project up and running, follow these steps:
 
 1. Clone the repository: 
-git clone [repository URL]
+git clone https://github.com/Diogomec/Pizza-Planet.git
 
 2. Install the dependencies:
 npm install
 
 3. Set up environment variables:
 - Create a `.env` file in the project root directory.
-- Add necessary environment variables (e.g., database connection string, API keys).
+- Add necessary environment variables (e.g., database connection string).
 
 4. Start the application:
 npm start
